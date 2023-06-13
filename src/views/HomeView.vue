@@ -1,0 +1,428 @@
+<script lang="ts">
+import {
+  createClient,
+  dedupExchange,
+  cacheExchange,
+  fetchExchange,
+  provideClient,
+  useQuery,
+} from "@urql/vue";
+
+import { defineComponent } from "vue";
+import { RouterLink } from "vue-router";
+import HeroModule from "../components/HeroModule.vue";
+
+export default defineComponent({
+  name: "HomeView",
+  // props: {},
+  data() {
+    return {
+      project: {},
+      strapiUrl: import.meta.env.VITE_STRAPI_URL,
+    };
+  },
+
+  setup() {
+    const client = createClient({
+      url: import.meta.env.VITE_STRAPI_URL_GQL,
+      exchanges: [dedupExchange, cacheExchange, fetchExchange],
+    });
+
+    provideClient(client);
+
+    const resultOne = useQuery({
+      query: `
+         {
+                project(id: 1) {
+                data {
+                id
+                attributes {
+                    title
+                    description
+                    category
+                    buttontext
+                    route
+                    imgStart
+                    image {
+                    data {
+                        attributes {
+                        url
+                    }
+                }
+            }
+        }
+    }
+  }
+}
+`,
+    });
+
+    const resultTwo = useQuery({
+      query: `
+         {
+                project(id: 2) {
+                data {
+                id
+                attributes {
+                    title
+                    description
+                    category
+                    buttontext
+                    route
+                    image {
+                    data {
+                        attributes {
+                        url
+                    }
+                }
+            }
+        }
+    }
+  }
+}
+`,
+    });
+    const resultThree = useQuery({
+      query: `
+         {
+                project(id: 3) {
+                data {
+                id
+                attributes {
+                    title
+                    description
+                    category
+                    buttontext
+                    route
+                    image {
+                    data {
+                        attributes {
+                        url
+                    }
+                }
+            }
+        }
+    }
+  }
+}
+`,
+    });
+    const resultFour = useQuery({
+      query: `
+         {
+                project(id: 4) {
+                data {
+                id
+                attributes {
+                    title
+                    description
+                    category
+                    buttontext
+                    route
+                    image {
+                    data {
+                        attributes {
+                        url
+                    }
+                }
+            }
+        }
+    }
+  }
+}
+`,
+    });
+
+    const resultFive = useQuery({
+      query: `
+         {
+                project(id: 5) {
+                data {
+                id
+                attributes {
+                    title
+                    description
+                    category
+                    buttontext
+                    route
+                    image {
+                    data {
+                        attributes {
+                        url
+                    }
+                }
+            }
+        }
+    }
+  }
+}
+`,
+    });
+
+    console.log(resultOne);
+    console.log(resultTwo);
+    console.log(resultThree);
+    console.log(resultFour);
+    console.log(resultFive);
+
+
+    return {
+
+      fetchingOne: resultOne.fetching,
+      fetchingTwo: resultTwo.fetching,
+      fetchingThree: resultThree.fetching,
+      fetchingFour: resultFour.fetching,
+      fetchingFive: resultFive.fetching,
+      dataOne: resultOne.data,
+      dataTwo: resultTwo.data,
+      dataThree: resultThree.data,
+      dataFour: resultFour.data,
+      dataFive: resultFive.data,
+      errorOne: resultOne.error,
+      errorTwo: resultTwo.error,
+      errorThree: resultThree.error,
+      errorFour: resultFour.error,
+      errorFive: resultFive.error,
+
+      // fetching: {...result.fetching, ...anotherResult.fetching},
+      // data: {...result.data,  ...anotherResult.data},
+      // error: {...result.error, ...anotherResult.error},
+
+    };
+  },
+  mounted() {
+    console.log("HomeView mounted");
+  },
+  components: {
+    HeroModule,
+  },
+  methods: {},
+});
+</script>
+
+<template>
+  <div>
+    <HeroModule></HeroModule>
+  </div>
+
+  <div
+    class="bg-bluegray-900 text-gray-100 p-3 flex justify-content-between lg:justify-content-center align-items-center flex-wrap">
+    <span class="no-underline font-bold">Development Projects</span>
+  </div>
+
+  <!-- Loading -->
+
+  <!-- Module 1 * -->
+
+  <div class="grid grid-nogutter text-800 bg-white py-6 my-3">
+    <!-- col 1  -->
+    <div class="col-12 md:col-6 p-6 text-center md:text-center flex align-items-center justify-content-around">
+      <section>
+        <span class="block text-xl font-bold mb-1 text-500">
+          {{ dataFive?.project?.data?.attributes?.category }}
+        </span>
+        <div class="text-6xl font-bold mb-3 text-700">
+          {{ dataFive?.project?.data?.attributes?.title }}
+        </div>
+        <p class="mt-0 mb-4 text-800 line-height-3">
+          {{ dataFive?.project?.data?.attributes?.description }}
+        </p>
+        <router-link :to="dataFive?.project?.data?.attributes.route || '/'">
+        <a v-ripple class="no-underline">
+          <Button label="View Project" type="button"
+            class="font-bold px-5 py-3 mr-0 sm:mr-4 p-button-secondary p-button-rounded p-button-raised white-space-nowrap"
+            rounded />
+        </a>
+        </router-link>
+      </section>
+    </div>
+
+    <!-- col 2 -->
+    <div class="col-12 md:col-6 flex-auto flex align-items-center justify-content-around">
+      <img v-bind:src="
+        dataFive  ?.project.data.attributes.image.data?.attributes?.url
+        " alt="Image" height="300" />
+    </div>
+  </div>
+  <!-- grid end -->
+
+  <Divider align="center" type="dotted">
+    <span class="text-400"><b>-</b></span>
+  </Divider>
+
+
+  <!-- Module 2 * -->
+
+  <div class="grid grid-nogutter text-800 bg-white py-6 my-3">
+    
+    <!-- col 1 -->
+    <div class="col-12 md:col-6 flex-auto justify-content-around">
+      <img v-bind:src="
+        dataTwo?.project.data.attributes.image.data?.attributes?.url
+        " alt="Image" height="300" />
+    </div>
+
+    <!-- col 2-->
+    <div class="col-12 md:col-6 p-6 text-center md:text-center flex align-items-center justify-content-around">
+      <section>
+        <span class="block text-xl font-bold mb-1 text-500">
+          {{ dataTwo?.project?.data?.attributes?.category }}
+  
+        </span>
+        <div class="text-6xl font-bold mb-3 text-700">
+          {{ dataTwo?.project?.data?.attributes?.title }}
+        </div>
+        <p class="mt-0 mb-4 text-900 line-height-3">
+          {{ dataTwo?.project?.data?.attributes?.description }}
+        </p>
+
+        <router-link :to="dataTwo?.project?.data?.attributes.route || '/'">
+          <a v-ripple class="no-underline">
+            <Button label="View Project" type="button"
+              class="font-bold px-5 py-3 mr-0 sm:mr-4 p-button-secondary p-button-rounded p-button-raised white-space-nowrap"
+              rounded />
+          </a>
+        </router-link>
+      </section>
+    </div>
+  </div> <!-- grid end -->
+  
+  <Divider align="center" type="dotted">
+    <span class="text-400"><b>-</b></span>
+  </Divider>
+
+
+  <!-- Module 3 * -->
+
+  <div class="grid grid-nogutter text-800 bg-white py-6 my-3">
+    <!-- col 1  -->
+    <div class="col-12 md:col-6 p-6 text-center md:text-center flex align-items-center justify-content-around">
+      <section>
+        <span class="block text-xl font-bold mb-1 text-500">
+          {{ dataThree?.project?.data?.attributes?.category }}
+        </span>
+        <div class="text-6xl font-bold mb-3 text-700">
+          {{ dataThree?.project?.data?.attributes?.title }}
+        </div>
+        <p class="mt-0 mb-4 text-800 line-height-3">
+          {{ dataThree?.project?.data?.attributes?.description }}
+        </p>
+        <router-link :to="dataOne?.project?.data?.attributes.route || '/'">
+        <a v-ripple class="no-underline">
+          <Button label="View Project" type="button"
+            class="font-bold px-5 py-3 mr-0 sm:mr-4 p-button-secondary p-button-rounded p-button-raised white-space-nowrap"
+            rounded />
+        </a>
+        </router-link>
+      </section>
+    </div>
+
+    <!-- col 2 -->
+    <div class="col-12 md:col-6 flex-auto flex align-items-center justify-content-around">
+      <img v-bind:src="
+        dataThree?.project.data.attributes.image.data?.attributes?.url
+        " alt="Image" height="300" />
+    </div>
+  </div>
+  <!-- grid end -->
+
+  <Divider align="center" type="dotted">
+    <span class="text-400"><b>-</b></span>
+  </Divider>
+
+
+  <!-- Module 4 * -->
+
+  <div class="grid grid-nogutter text-800 bg-white py-6 my-3">
+    
+    <!-- col 1 -->
+    <div class="col-12 md:col-6 flex-auto justify-content-around">
+      <img v-bind:src="
+        dataFour?.project.data.attributes.image.data?.attributes?.url
+        " alt="Image" height="300" />
+    </div>
+
+    <!-- col 2-->
+    <div class="col-12 md:col-6 p-6 text-center md:text-center flex align-items-center justify-content-around">
+      <section>
+        <span class="block text-xl font-bold mb-1 text-500">
+          {{ dataFour?.project?.data?.attributes?.category }}
+  
+        </span>
+        <div class="text-6xl font-bold mb-3 text-700">
+          {{ dataFour?.project?.data?.attributes?.title }}
+        </div>
+        <p class="mt-0 mb-4 text-900 line-height-3">
+          {{ dataFour?.project?.data?.attributes?.description }}
+        </p>
+
+        <router-link :to="dataFour?.project?.data?.attributes.route || '/'">
+          <a v-ripple class="no-underline">
+            <Button label="View Project" type="button"
+              class="font-bold px-5 py-3 mr-0 sm:mr-4 p-button-secondary p-button-rounded p-button-raised white-space-nowrap"
+              rounded />
+          </a>
+        </router-link>
+      </section> 
+    </div>
+  </div> <!-- grid end -->
+
+  <Divider align="center" type="dotted">
+    <span class="text-400"><b>o</b></span>
+  </Divider>
+
+
+    <!-- Module 5 * -->
+
+    <div class="grid grid-nogutter text-800 bg-white py-6 my-3">
+    <!-- col 1  -->
+    <div class="col-12 md:col-6 p-6 text-center md:text-center flex align-items-center justify-content-around">
+      <section>
+        <span class="block text-xl font-bold mb-1 text-500">
+          {{ dataOne?.project?.data?.attributes?.category }}
+        </span>
+        <div class="text-6xl font-bold mb-3 text-700">
+          {{ dataOne?.project?.data?.attributes?.title }}
+        </div>
+        <p class="mt-0 mb-4 text-800 line-height-3">
+          {{ dataOne?.project?.data?.attributes?.description }}
+        </p>
+        <router-link :to="dataOne?.project?.data?.attributes.route || '/'">
+        <a v-ripple class="no-underline">
+          <Button label="View Project" type="button"
+            class="font-bold px-5 py-3 mr-0 sm:mr-4 p-button-secondary p-button-rounded p-button-raised white-space-nowrap"
+            rounded />
+        </a>
+        </router-link>
+      </section>
+    </div>
+
+    <!-- col 2 -->
+    <div class="col-12 md:col-6 flex-auto flex align-items-center justify-content-around">
+      <img v-bind:src="
+        dataOne?.project.data.attributes.image.data?.attributes?.url
+        " alt="Image" height="300" />
+    </div>
+  </div>
+  <!-- grid end -->
+
+
+
+</template>
+
+<style scoped>
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.vue:hover {
+  filter: drop-shadow(0 0 2em #42b883aa);
+}
+</style>
