@@ -466,6 +466,8 @@ export default defineComponent({
   transition: filter 300ms;
 }
 
+a:link { text-decoration: none; }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }

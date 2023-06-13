@@ -20,13 +20,13 @@ export default defineComponent({
     return {
       project: {},
       imagetst: {},
-      url: "https://jakvitebackend.herokuapp.com/graphql",
+      strapiUrl: import.meta.env.VITE_STRAPI_URL,
     };
   },
 
   setup() {
     const client = createClient({
-      url: "http://localhost:1337/graphql",
+      url: import.meta.env.VITE_STRAPI_URL_GQL,
       exchanges: [dedupExchange, cacheExchange, fetchExchange],
     });
 
