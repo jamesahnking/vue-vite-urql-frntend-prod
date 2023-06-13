@@ -30,6 +30,35 @@ export default defineComponent({
 
     provideClient(client);
 
+
+    const resultHero = useQuery({
+      query: `
+      {
+        hero {
+            data {
+            id
+            attributes {
+                title
+                subtitle
+                buttontext
+                herotext
+                herologo {
+                data {
+                    attributes {
+                    url
+                        }
+                     }
+                }
+              }
+            }
+         }
+      }`
+    });
+
+
+
+
+
     const resultOne = useQuery({
       query: `
          {
@@ -173,11 +202,14 @@ export default defineComponent({
       fetchingThree: resultThree.fetching,
       fetchingFour: resultFour.fetching,
       fetchingFive: resultFive.fetching,
+      fetchingHero: resultHero.fetching,
+      dataHero: resultHero.data,
       dataOne: resultOne.data,
       dataTwo: resultTwo.data,
       dataThree: resultThree.data,
       dataFour: resultFour.data,
       dataFive: resultFive.data,
+      errorHero: resultHero.error,
       errorOne: resultOne.error,
       errorTwo: resultTwo.error,
       errorThree: resultThree.error,
@@ -201,11 +233,27 @@ export default defineComponent({
 </script>
 
 <template>
-  <div>
+  <!-- <div>
     <HeroModule></HeroModule>
-  </div>
+  </div> -->
+  
+  <div class="bg-yellow-100 text-center px-0 sm:px-4 py-8 md:px-6 lg:px-8" >
+          
+          <img :src="dataHero?.hero.data.attributes.herologo.data?.attributes?.url" alt="Logo" height="250" />
+     
+          <p class="text-900 font-semibold line-height-3 text-center">{{ dataHero?.hero.data.attributes.title }}
+              <br/>
+              <span class="text-600 font-normal line-height-1 mt-2 text-sm text-center">{{ dataHero?.hero.data.attributes.subtitle }}</span>
+          </p>
 
+          <div class="flex justify-content-center">
+              <h2 class="px-2 md:px-6 text-900 text-base font-medium line-height-3 mb-4 max-w-28rem" style="max-width: 1350px">{{ dataHero?.hero.data.attributes.herotext }}</h2>
+          </div>
+      
+      </div>
   <div
+
+
     class="bg-bluegray-900 text-gray-100 p-3 flex justify-content-between lg:justify-content-center align-items-center flex-wrap">
     <span class="no-underline font-bold">Development Projects</span>
   </div>
