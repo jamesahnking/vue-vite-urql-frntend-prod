@@ -57,6 +57,8 @@ export default defineComponent({
                 stackitemtext_03
                 stackitemtext_04
                 stackitemtext_05
+                stackitemtext_06
+                stackitemtext_07
                 stackitem_ico_01
                 stackitem_ico_02
                 stackitem_ico_03
@@ -198,6 +200,22 @@ export default defineComponent({
           >
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_05
+            }}</span>
+            <!-- <i class="pi pi-comments"></i> -->
+          </div>
+          <div
+            class="text-900 flex flex-row align-items-center justify-content-start"
+          >
+            <span class="font-normal mr-3">{{
+              data?.project.data.attributes.stackitemtext_06
+            }}</span>
+            <!-- <i class="pi pi-comments"></i> -->
+          </div>
+          <div
+            class="text-900 flex flex-row align-items-center justify-content-start"
+          >
+            <span class="font-normal mr-3">{{
+              data?.project.data.attributes.stackitemtext_07
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>

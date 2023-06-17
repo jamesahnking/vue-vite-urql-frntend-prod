@@ -212,12 +212,12 @@ export default defineComponent({
         <div
           class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5"
         >
+
           <!-- #1 Image -->
-          <!-- <div class="text-center mb-2">
+          <div class="text-center mb-2">
             <img
               :src="
-                strapiUrl +
-                data?.project.data.attributes.image01.data.attributes.url
+                data?.project.data.attributes.image01.data?.attributes.url
               "
               alt="Image"
               class="w-full border-round p-0"
@@ -225,13 +225,15 @@ export default defineComponent({
             <span class="block text-600 line-height-3">
               {{ data?.project.data.attributes.descimage01 }}</span
             >
-          </div> -->
+          </div>
 
-          <div class="line-height-3 text-lg text-left text-900 mb-5">
+        <div class="line-height-3 text-lg text-left text-900 mb-5">
             <div
               v-html="data?.project.data.attributes.richprojectdescription"
             ></div>
           </div>
+        
+
 
           <!-- #2 Image -->
           <!-- <div class="text-center mb-5">
