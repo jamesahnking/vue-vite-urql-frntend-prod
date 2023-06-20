@@ -206,6 +206,14 @@ export default defineComponent({
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
+          <div
+            class="text-900 flex flex-row align-items-center justify-content-start"
+          >
+            <span class="font-normal mr-3">{{
+              data?.project.data.attributes.stackitemtext_05
+            }}</span>
+            <!-- <i class="pi pi-comments"></i> -->
+          </div>
         </div>
       </div>
 
@@ -236,8 +244,6 @@ export default defineComponent({
             ></div>
           </div>
         
-
-
           <!-- #2 Image -->
           <!-- <div class="text-center mb-5">
             <img
@@ -274,13 +280,16 @@ export default defineComponent({
             >{{ data?.project.data.attributes.title }}</span
           >
           <div class="flex align-items-center cursor-pointer">
-          <router-link :to="data?.project.data.attributes.nextprojectpath" class="no-underline">
+          
+            <router-link to='/NftMarketPlace' class="no-underline">
             <span class="font-normal mr-3">
               {{ data?.project.data.attributes.nextprojecttext }}
             </span>
-          </router-link>
+
 
             <i class="pi pi-arrow-right"></i>
+          </router-link>
+
           </div>
         </div>
       </div>
