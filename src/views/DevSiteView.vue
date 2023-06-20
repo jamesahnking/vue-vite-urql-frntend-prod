@@ -21,6 +21,7 @@ export default defineComponent({
       project: {},
       imagetst: {},
       strapiUrl: import.meta.env.VITE_STRAPI_URL,
+
     };
   },
 
@@ -56,8 +57,6 @@ export default defineComponent({
                 stackitemtext_03
                 stackitemtext_04
                 stackitemtext_05
-                stackitemtext_06
-                stackitemtext_07
                 stackitem_ico_01
                 stackitem_ico_02
                 stackitem_ico_03
@@ -75,7 +74,8 @@ export default defineComponent({
                 videoUrl
                 repoUrl
                 richprojectdescription
-           
+                nextprojecttext
+                nextprojectpath
                 image01 {
                 data {
                     attributes {
@@ -124,7 +124,7 @@ export default defineComponent({
       <!-- c1 -->
       <div class="col sm:px-2 md:px-6 md:pt-6 lg:px-7">
         <div
-          class="sm:text-4xl md:text-6xl lg:text-6xl xl:text-7xl text-6xl font-bold text-white"
+          class="sm:text-4xl font-bold text-white"
         >
           {{ data?.project.data.attributes.title }}
         </div>
@@ -140,7 +140,8 @@ export default defineComponent({
             data?.project.data.attributes.image.data.attributes.url
           "
           alt="Image"
-          class="w-full border-round p-3"
+          class="w-full border-round p-3 w-8"
+        
         />
       </div>
     </div>
@@ -202,24 +203,6 @@ export default defineComponent({
           >
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_05
-            }}</span>
-            <!-- <i class="pi pi-comments"></i> -->
-          </div>
-          
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
-            <span class="font-normal mr-3">{{
-              data?.project.data.attributes.stackitemtext_06
-            }}</span>
-            <!-- <i class="pi pi-comments"></i> -->
-          </div>
-
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
-            <span class="font-normal mr-3">{{
-              data?.project.data.attributes.stackitemtext_07
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
@@ -291,7 +274,12 @@ export default defineComponent({
             >{{ data?.project.data.attributes.title }}</span
           >
           <div class="flex align-items-center cursor-pointer">
-            <span class="font-normal mr-3">View Next Project</span>
+          <router-link :to="data?.project.data.attributes.nextprojectpath" class="no-underline">
+            <span class="font-normal mr-3">
+              {{ data?.project.data.attributes.nextprojecttext }}
+            </span>
+          </router-link>
+
             <i class="pi pi-arrow-right"></i>
           </div>
         </div>
@@ -301,3 +289,4 @@ export default defineComponent({
     </div>
   </div>
 </template>
+
