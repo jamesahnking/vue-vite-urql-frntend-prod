@@ -21,7 +21,7 @@ export default defineComponent({
       project: {},
       imagetst: {},
       strapiUrl: import.meta.env.VITE_STRAPI_URL,
-      githubUrl: import.meta.env.VITE_URL_GITHUB,
+      githubUrl: 'https://github.com/jamesahnking/vue-vite-urql-frntend-prod',
     };
   },
 
@@ -128,7 +128,7 @@ export default defineComponent({
 <template>
   <div class="surface-section px-4 py-6 md:px-6 lg:px-8">
     <!-- Grid 1 Header Mod-->
-    <div class="grid bg-blue-900 mb-6 align-items-center">
+    <div class="grid bg-blue-200 mb-6 align-items-center">
       <!-- c1 -->
       <div class="col">
         <div class="text-6xl font-bold text-white">
@@ -155,10 +155,9 @@ export default defineComponent({
       <div class="col-12 lg:col-2">
         <div
           class="flex flex-column lg:flex-column lg:border-right-1 surface-border gap-3 mb-4 lg:px-5"
-        >
+>
           <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+            class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-semibold mr-3">
               {{ data?.project.data.attributes.stacktitle }}
             </span>
@@ -233,11 +232,14 @@ export default defineComponent({
       <div class="col-12 lg:col-10 lg:px-5">
         <div
           class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5">
+         
+          <!-- Github Repo -->
           <div class="col-12">
-              <a :href="githubUrl" target="_blank">
+            <a :href="githubUrl" target="_blank">
               <div
                 class="p-3 border-1 surface-border border-round surface-card"
               >
+
                 <div class="text-900 mb-2">
                   <i class="pi pi-github mr-2"></i>
                   <span class="font-medium">Github</span>
@@ -246,9 +248,10 @@ export default defineComponent({
                   Checkout the {{ data?.project.data.attributes.title }} project
                   repository
                 </div>
+                
               </div>
             </a>
-            </div>
+          </div>
 
           <!-- #1 Image -->
           <div class="text-center mb-2">
@@ -321,6 +324,9 @@ export default defineComponent({
             ><i class="pi pi-bolt mr-2"></i
             >{{ data?.project.data.attributes.title }}</span
           >
+
+          <!-- Next Project Text/Button -->
+          
           <div class="flex align-items-center cursor-pointer">
             <router-link to="/NftMarketPlace" class="no-underline">
               <span class="font-normal mr-3">
@@ -330,6 +336,8 @@ export default defineComponent({
               <i class="pi pi-arrow-right"></i>
             </router-link>
           </div>
+
+
         </div>
       </div>
 

@@ -15,13 +15,14 @@ import LiteYouTubeEmbed from "vue-lite-youtube-embed";
 import "vue-lite-youtube-embed/style.css";
 
 export default defineComponent({
-  name: "MarketView",
+  name: "MarketPlaceView",
   props: {},
   data() {
     return {
       project: {},
       imagetst: {},
       strapiUrl: import.meta.env.VITE_STRAPI_URL,
+      githubUrl: 'https://github.com/jamesahnking/nftmarketplace',
     };
   },
 
@@ -72,6 +73,8 @@ export default defineComponent({
                 videoUrl
                 repoUrl
                 richprojectdescription
+                nextprojecttext
+                nextprojectpath
                 image01 {
                 data {
                     attributes {
@@ -115,7 +118,7 @@ export default defineComponent({
     };
   },
   mounted() {
-    console.log("MarketView component mounted");
+    console.log("MarketPlaceView component mounted");
   },
 
   methods: {},
@@ -129,28 +132,24 @@ export default defineComponent({
 <template>
   
   <div class="surface-section px-4 py-6 md:px-6 lg:px-8">
-    <!-- Grid 1 Header Mod-->
+      <!-- Grid 1 Header Mod-->
     <div class="grid bg-yellow-300 mb-6 align-items-center">
       <!-- c1 -->
-      <div class="col sm:px-2 md:px-6 md:pt-6 lg:px-7">
-        <div
-          class="sm:text-4xl md:text-6xl lg:text-6xl xl:text-7xl text-6xl font-bold text-white"
-        >
-          {{ data?.project.data?.attributes?.title }}
+      <div class="col">
+        <div class="text-6xl font-bold text-white">
+          {{ data?.project.data.attributes.title }}
         </div>
         <div class="line-height-3 text-white mt-3 sm:text-sm md:text-lg">
-          {{ data?.project.data?.attributes?.description }}
+          {{ data?.project.data.attributes.description }}
         </div>
       </div>
 
       <!-- c2 -->
-      <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-5">
+      <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-2">
         <img
-          :src="
-            data?.project.data.attributes.image.data?.attributes?.url
-          "
+          :src="data?.project.data.attributes.image.data.attributes.url"
           alt="Image"
-          class="w-full border-round p-3 min-width:300px "
+          class="w-full border-round p-3 md: w-8"
         />
       </div>
     </div>
@@ -224,6 +223,26 @@ export default defineComponent({
         <div
           class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5"
         >
+       <!-- Github Repo -->
+       <div class="col-12">
+            <a :href="githubUrl" target="_blank">
+              <div
+                class="p-3 border-1 surface-border border-round surface-card"
+              >
+
+                <div class="text-900 mb-2">
+                  <i class="pi pi-github mr-2"></i>
+                  <span class="font-medium">Github</span>
+                </div>
+                <div class="text-700">
+                  Checkout the {{ data?.project.data.attributes.title }} project
+                  repository
+                </div>
+                
+              </div>
+            </a>
+          </div>
+
           <!-- #1 Image -->
           <div class="text-center mb-2">
             <img
@@ -299,19 +318,27 @@ export default defineComponent({
         />
       </div>
 
-
-
-        <div
+      <div
           class="flex flex-wrap justify-content-between align-items-center gap-3 bg-white text-700 p-3 border-round"
         >
           <span class="font-bold text-xl"
             ><i class="pi pi-bolt mr-2"></i
             >{{ data?.project.data.attributes.title }}</span
           >
+
+          <!-- Next Project Text/Button -->
+          
           <div class="flex align-items-center cursor-pointer">
-            <span class="font-normal mr-3">View Next Project</span>
-            <i class="pi pi-arrow-right"></i>
+            <router-link to="/MultiSigWallet" class="no-underline">
+              <span class="font-normal mr-3">
+                {{ data?.project.data.attributes.nextprojecttext }}
+              </span>
+
+              <i class="pi pi-arrow-right"></i>
+            </router-link>
           </div>
+
+
         </div>
       </div>
 
@@ -319,3 +346,9 @@ export default defineComponent({
     </div>
   </div>
 </template>
+<style scoped>
+
+a:link { text-decoration: none; }
+
+
+</style>

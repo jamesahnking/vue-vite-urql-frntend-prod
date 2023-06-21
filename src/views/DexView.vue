@@ -22,6 +22,8 @@ export default defineComponent({
       project: {},
       imagetst: {},
       strapiUrl: import.meta.env.VITE_STRAPI_URL,
+      githubUrl: 'https://github.com/jamesahnking/dexClient',
+
     };
   },
 
@@ -119,26 +121,25 @@ export default defineComponent({
 
 <template>
   <div class="surface-section px-4 py-6 md:px-6 lg:px-8">
-    <!-- Grid 1 Header Mod-->
-    <div class="grid bg-blue-900 mb-6 align-items-center">
+     <!-- Grid 1 Header Mod-->
+     <div class="grid bg-blue-900 mb-6 align-items-center">
       <!-- c1 -->
-      <div class="col sm:px-2 md:px-6 md:pt-6 lg:px-7">
-        <div
-          class="sm:text-4xl md:text-6xl lg:text-6xl xl:text-7xl text-6xl font-bold text-white"
-        >
-          {{ data?.project.data?.attributes?.title }}
+      <div class="col">
+        <div class="text-6xl font-bold text-white">
+          {{ data?.project.data.attributes.title }}
         </div>
         <div class="line-height-3 text-white mt-3 sm:text-sm md:text-lg">
-          {{ data?.project.data?.attributes?.description }}
+          {{ data?.project.data.attributes.description }}
         </div>
       </div>
 
-      <!-- c2 -->
-      <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-5">
+
+     <!-- c2 -->
+     <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-2">
         <img
-          :src="data?.project.data.attributes.image.data?.attributes?.url"
+          :src="data?.project.data.attributes.image.data.attributes.url"
           alt="Image"
-          class="w-full border-round p-3"
+          class="w-full border-round p-3 md: w-8"
         />
       </div>
     </div>
@@ -147,7 +148,7 @@ export default defineComponent({
     <div class="grid">
       <!-- c1 -->
       <div class="col-12 lg:col-2">
-        <div
+        <div  
           class="flex flex-column lg:flex-column lg:border-right-1 surface-border gap-3 mb-4 lg:px-5"
         >
           <div
@@ -226,8 +227,30 @@ export default defineComponent({
 
       <div class="col-12 lg:col-10 lg:px-5">
         <div
-          class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5"
-        >
+          class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5">
+
+          <!-- Github  Area -->
+          <div class="col-12">
+              <a :href="githubUrl" target="_blank">
+              <div
+                class="p-3 border-1 surface-border border-round surface-card"
+              >
+                <div class="text-900 mb-2">
+                  <i class="pi pi-github mr-2"></i>
+                  <span class="font-medium">Github</span>
+                </div>
+                <div class="text-700">
+                  Checkout the {{ data?.project.data.attributes.title }} project
+                  repository
+                </div>
+              </div>
+            </a>
+          </div>
+
+
+
+
+
           <!-- #2 Image -->
           <div class="text-center mb-5">
             <img
@@ -288,3 +311,10 @@ export default defineComponent({
     </div>
   </div>
 </template>
+
+<style scoped>
+
+a:link { text-decoration: none; }
+
+
+</style>
