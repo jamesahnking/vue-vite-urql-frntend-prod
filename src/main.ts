@@ -69,6 +69,7 @@ app.component("Button", Button);
 app.component("Panel", Panel);
 app.component("Accordion", Accordion);
 app.component("Divider", Divider);
+app.component("Chip", Chip);
 app.directive("styleclass", StyleClass);
 app.directive("ripple", Ripple);
 
