@@ -124,7 +124,7 @@ export default defineComponent({
         <div class="text-6xl font-bold text-white">
           {{ data?.project.data.attributes.title }}
         </div>
-        <div class="line-height-3 text-white mt-3 sm:text-sm md:text-lg">
+        <div class="line-height-3 text-white mt-2 sm:text-sm md:text-lg px-4">
           {{ data?.project.data.attributes.description }}
         </div>
       </div>

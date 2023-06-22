@@ -78,7 +78,8 @@ export default defineComponent({
                 videoUrl
                 repoUrl
                 richprojectdescription
-           
+                nextprojecttext
+                nextprojectpath
                 image01 {
                 data {
                     attributes {
@@ -121,8 +122,8 @@ export default defineComponent({
 
 <template>
   <div class="surface-section px-4 py-6 md:px-6 lg:px-8">
-     <!-- Grid 1 Header Mod-->
-     <div class="grid bg-blue-900 mb-6 align-items-center">
+    <!-- Grid 1 Header Mod-->
+    <div class="grid bg-blue-900 mb-6 align-items-center">
       <!-- c1 -->
       <div class="col">
         <div class="text-6xl font-bold text-white">
@@ -134,13 +135,10 @@ export default defineComponent({
       </div>
 
 
-     <!-- c2 -->
-     <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-2">
-        <img
-          :src="data?.project.data.attributes.image.data.attributes.url"
-          alt="Image"
-          class="w-full border-round p-3 md: w-8"
-        />
+      <!-- c2 -->
+      <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-2">
+        <img :src="data?.project.data.attributes.image.data.attributes.url" alt="Image"
+          class="w-full border-round p-3 md: w-8" />
       </div>
     </div>
 
@@ -148,73 +146,54 @@ export default defineComponent({
     <div class="grid">
       <!-- c1 -->
       <div class="col-12 lg:col-2">
-        <div  
-          class="flex flex-column lg:flex-column lg:border-right-1 surface-border gap-3 mb-4 lg:px-5"
-        >
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+        <div class="flex flex-column lg:flex-column lg:border-right-1 surface-border gap-3 mb-4 lg:px-5">
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-semibold mr-3">
               {{ data?.project.data.attributes.stacktitle }}
             </span>
             <!-- <i class="pi pi-bookmark"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
-            <span class="font-normal mr-3"
-              >{{ data?.project.data.attributes.stackitemtext_01 }}
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
+            <span class="font-normal mr-3">{{ data?.project.data.attributes.stackitemtext_01 }}
             </span>
             <!-- <i class="pi pi-heart"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_02
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_03
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_04
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_05
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_06
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_07
             }}</span>
@@ -226,15 +205,12 @@ export default defineComponent({
       <!-- c2 Main Content Area -->
 
       <div class="col-12 lg:col-10 lg:px-5">
-        <div
-          class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5">
+        <div class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5">
 
           <!-- Github  Area -->
           <div class="col-12">
-              <a :href="githubUrl" target="_blank">
-              <div
-                class="p-3 border-1 surface-border border-round surface-card"
-              >
+            <a :href="githubUrl" target="_blank">
+              <div class="p-3 border-1 surface-border border-round surface-card">
                 <div class="text-900 mb-2">
                   <i class="pi pi-github mr-2"></i>
                   <span class="font-medium">Github</span>
@@ -253,11 +229,8 @@ export default defineComponent({
 
           <!-- #2 Image -->
           <div class="text-center mb-5">
-            <img
-              :src="data?.project.data.attributes.image02.data.attributes.url"
-              alt="Image"
-              class="w-full border-round p-0"
-            />
+            <img :src="data?.project.data.attributes.image02.data.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
             <span class="block text-600 line-height-3">{{
               data?.project.data.attributes.descimage02
             }}</span>
@@ -266,44 +239,37 @@ export default defineComponent({
 
           <!-- #1 Image -->
           <div class="text-center mb-2">
-            <img
-              :src="data?.project.data.attributes.image01.data.attributes.url"
-              alt="Image"
-              class="w-full border-round p-0"
-            />
+            <img :src="data?.project.data.attributes.image01.data.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
             <span class="block text-600 line-height-3">
-              {{ data?.project.data.attributes.descimage01 }}</span
-            >
+              {{ data?.project.data.attributes.descimage01 }}</span>
           </div>
         </div>
 
 
         <div class="line-height-3 text-lg text-left text-900 mb-5">
-            <div
-              v-html="data?.project.data.attributes.richprojectdescription"
-            ></div>
-          </div>
+          <div v-html="data?.project.data.attributes.richprojectdescription"></div>
+        </div>
 
         <!-- Youtube Embed -->
 
         <!-- rest of your template -->
         <!-- Youtube Embed -->
-        <LiteYouTubeEmbed
-          :id="data?.project.data.attributes.videoUrl"
-          title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
-        />
-
-        <div
-          class="flex flex-wrap justify-content-between align-items-center gap-3 bg-white text-700 p-3 border-round"
-        >
-          <span class="font-bold text-xl"
-            ><i class="pi pi-bolt mr-2"></i
-            >{{ data?.project.data.attributes.title }}</span
-          >
+        <LiteYouTubeEmbed :id="data?.project.data.attributes.videoUrl"
+          title="Rick Astley - Never Gonna Give You Up (Official Music Video)" />
+        <!-- Project Footer tiltle and Next Button -->
+        <div class="flex flex-wrap justify-content-between align-items-center gap-3 bg-white text-700 p-3 border-round">
+          <span class="font-bold text-xl"><i class="pi pi-bolt mr-2"></i>{{ data?.project.data.attributes.title }}</span>
+         
           <div class="flex align-items-center cursor-pointer">
-            <span class="font-normal mr-3">View Next Project</span>
-            <i class="pi pi-arrow-right"></i>
+            <router-link to="/PillarsAndRings" class="no-underline">
+              <span class="font-normal mr-3">
+                {{ data?.project.data.attributes.nextprojecttext }}
+              </span>
+              <i class="pi pi-arrow-right"></i>
+            </router-link>
           </div>
+       
         </div>
       </div>
 
@@ -313,8 +279,7 @@ export default defineComponent({
 </template>
 
 <style scoped>
-
-a:link { text-decoration: none; }
-
-
+a:link {
+  text-decoration: none;
+}
 </style>

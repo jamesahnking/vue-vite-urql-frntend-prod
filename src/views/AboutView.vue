@@ -85,7 +85,7 @@ export default defineComponent({
         <img
           :src="data?.about.data.attributes.image01.data?.attributes?.url"
           alt="J Image"
-          class="w-full border-round"
+          class="w-full border-round md: w-10"
         />
         <!-- Image Description  -->
         <div class="text-center text-sm font-medium mt-3">
