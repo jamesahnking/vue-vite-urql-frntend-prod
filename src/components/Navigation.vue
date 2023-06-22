@@ -186,7 +186,7 @@ export default defineComponent({
                                 enterClass: 'hidden',
                                 leaveToClass: 'hidden',
                             }">
-                            
+
                             <span>{{ data?.navigation.data.attributes.navitem06 }}</span>
                         </a>
                     </li>

@@ -227,6 +227,7 @@ export default defineComponent({
   },
   components: {
     HeroModule,
+
   },
   methods: {},
 });
@@ -236,7 +237,8 @@ export default defineComponent({
   <!-- <div>
     <HeroModule></HeroModule>
   </div> -->
-  
+  <ScrollTop />
+
   <div class="bg-yellow-100 text-center px-0 sm:px-4 py-8 md:px-6 lg:px-8" >
           
           <img :src="dataHero?.hero.data.attributes.herologo.data?.attributes?.url" alt="Logo" height="250" />

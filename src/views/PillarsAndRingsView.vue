@@ -73,6 +73,8 @@ export default defineComponent({
                 videoUrl
                 repoUrl
                 richprojectdescription
+                nextprojecttext
+                nextprojectpath
                 image01 {
                 data {
                     attributes {
@@ -307,9 +309,13 @@ export default defineComponent({
             ><i class="pi pi-bolt mr-2"></i
             >{{ data?.project.data.attributes.title }}</span
           >
-          <div class="flex align-items-center cursor-pointer">
-            <span class="font-normal mr-3">View Next Project</span>
-            <i class="pi pi-arrow-right"></i>
+<div class="flex align-items-center cursor-pointer">
+            <router-link to="/DevSite" class="no-underline">
+              <span class="font-normal mr-3">
+                {{ data?.project.data.attributes.nextprojecttext }}
+              </span>
+              <i class="pi pi-arrow-right"></i>
+            </router-link>
           </div>
         </div>
       </div>
