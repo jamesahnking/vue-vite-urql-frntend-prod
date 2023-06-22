@@ -21,6 +21,8 @@ export default defineComponent({
       project: {},
       imagetst: {},
       strapiUrl: import.meta.env.VITE_STRAPI_URL,
+      githubUrl: 'https://github.com/jamesahnking/DevSite',
+
     };
   },
 
@@ -137,13 +139,11 @@ export default defineComponent({
 
 <template>
   <div class="surface-section px-4 py-6 md:px-6 lg:px-8">
-    <!-- Grid 1 Header Mod-->
+      <!-- Grid 1 Header Mod-->
     <div class="grid bg-yellow-300 mb-6 align-items-center">
       <!-- c1 -->
-      <div class="col sm:px-2 md:px-6 md:pt-6 lg:px-7">
-        <div
-          class="sm:text-4xl md:text-6xl lg:text-6xl xl:text-7xl text-6xl font-bold text-white"
-        >
+      <div class="col">
+        <div class="text-6xl font-bold text-white">
           {{ data?.project.data.attributes.title }}
         </div>
         <div class="line-height-3 text-white mt-3 sm:text-sm md:text-lg">
@@ -152,13 +152,11 @@ export default defineComponent({
       </div>
 
       <!-- c2 -->
-      <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-5">
+      <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-2">
         <img
-          :src="
-            data?.project.data.attributes.image.data.attributes.url
-          "
+          :src="data?.project.data.attributes.image.data.attributes.url"
           alt="Image"
-          class="w-full border-round p-3"
+          class="w-full border-round p-3 md: w-8"
         />
       </div>
     </div>
