@@ -155,7 +155,7 @@ export default defineComponent({
       <div class="col-12 lg:col-2">
         <div
           class="flex flex-column lg:flex-column lg:border-right-1 surface-border gap-3 mb-4 lg:px-5"
->
+        >
           <div
             class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-semibold mr-3">

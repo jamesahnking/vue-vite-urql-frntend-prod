@@ -207,7 +207,13 @@ export default defineComponent({
 
                 <router-link to="/Contact">
                     <li>
-                        <a v-ripple class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-sm text-600">
+                        <a v-ripple class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-sm text-600"
+                        v-styleclass="{
+                                selector: '.flag',
+                                enterClass: 'hidden',
+                                leaveToClass: 'hidden',
+                            }">
+                        
                             <span><Button label="Contact Me" class="text-sm p-button-secondary" rounded /></span>
                         </a>
                     </li>
