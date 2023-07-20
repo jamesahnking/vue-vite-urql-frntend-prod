@@ -72,6 +72,7 @@ export default defineComponent({
                 imgStart
                 descimage01
                 descimage02
+                descimage03
                 dark
                 primary
                 darkText
@@ -87,7 +88,21 @@ export default defineComponent({
                     }
                 }
                 }
+                image01 {
+                data {
+                    attributes {
+                    url
+                    }
+                }
+                }
                 image02 {
+                data {
+                    attributes {
+                    url
+                    }
+                }
+                }
+                image03 {
                 data {
                     attributes {
                     url
@@ -224,19 +239,6 @@ export default defineComponent({
           </div>
 
 
-
-
-
-          <!-- #2 Image -->
-          <div class="text-center mb-5">
-            <img :src="data?.project.data.attributes.image02.data.attributes.url" alt="Image"
-              class="w-full border-round p-0" />
-            <span class="block text-600 line-height-3">{{
-              data?.project.data.attributes.descimage02
-            }}</span>
-          </div>
-
-
           <!-- #1 Image -->
           <div class="text-center mb-2">
             <img :src="data?.project.data.attributes.image01.data.attributes.url" alt="Image"
@@ -247,6 +249,26 @@ export default defineComponent({
         </div>
 
 
+        <!-- #2 Image -->
+        <div class="text-center mb-5">
+          <img :src="data?.project.data.attributes.image02.data.attributes.url" alt="Image"
+            class="w-full border-round p-0" />
+          <span class="block text-600 line-height-3">{{
+            data?.project.data.attributes.descimage02
+          }}</span>
+        </div>
+
+
+        <!-- #3 Image -->
+        <div class="text-center mb-5">
+          <img :src="data?.project.data.attributes.image03.data.attributes.url" alt="Image"
+            class="w-full border-round p-0" />
+          <span class="block text-600 line-height-3">{{
+            data?.project.data.attributes.descimage03
+          }}</span>
+        </div>
+
+      
         <div class="line-height-3 text-lg text-left text-900 mb-5">
           <div v-html="data?.project.data.attributes.richprojectdescription"></div>
         </div>
@@ -260,7 +282,7 @@ export default defineComponent({
         <!-- Project Footer tiltle and Next Button -->
         <div class="flex flex-wrap justify-content-between align-items-center gap-3 bg-white text-700 p-3 border-round">
           <span class="font-bold text-xl"><i class="pi pi-bolt mr-2"></i>{{ data?.project.data.attributes.title }}</span>
-         
+
           <div class="flex align-items-center cursor-pointer">
             <router-link to="/PillarsAndRings" class="no-underline">
               <span class="font-normal mr-3">
@@ -269,7 +291,7 @@ export default defineComponent({
               <i class="pi pi-arrow-right"></i>
             </router-link>
           </div>
-       
+
         </div>
       </div>
 

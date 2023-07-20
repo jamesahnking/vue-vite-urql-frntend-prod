@@ -67,6 +67,8 @@ export default defineComponent({
                 lightText
                 lightTextDesc
                 imgStart
+                descimage01
+                descimage02
                 dark
                 primary
                 darkText
@@ -76,6 +78,20 @@ export default defineComponent({
                 nextprojecttext
                 nextprojectpath
                 image01 {
+                data {
+                    attributes {
+                    url
+                    }
+                }
+                }
+                image01 {
+                data {
+                    attributes {
+                    url
+                    }
+                }
+                }
+                image02 {
                 data {
                     attributes {
                     url
@@ -212,24 +228,17 @@ export default defineComponent({
               {{ data?.project.data.attributes.descimage01 }}</span>
           </div>
 
+          <!-- #1 Image -->
+          <div class="text-center mb-2">
+            <img :src="data?.project.data.attributes.image02.data.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
+            <span class="block text-600 line-height-3">
+              {{ data?.project.data.attributes.descimage02 }}</span>
+          </div>
+
           <div class="line-height-3 text-lg text-left text-900 mb-5">
             <div v-html="data?.project.data.attributes.richprojectdescription"></div>
           </div>
-
-          <!-- #2 Image -->
-          <!-- <div class="text-center mb-5">
-            <img
-              :src="
-                strapiUrl +
-                data?.project.data.attributes.image02.data.attributes.url
-              "
-              alt="Image"
-              class="w-full border-round p-0"
-            />
-            <span class="block text-600 line-height-3">{{ data?.project.data.attributes.descimage02
-            }}</span>
-          </div> -->
-
         </div>
 
         <!-- Youtube Embed -->
@@ -250,7 +259,6 @@ export default defineComponent({
               <i class="pi pi-arrow-right"></i>
             </router-link>
           </div>
-
         </div>
       </div>
     </div>

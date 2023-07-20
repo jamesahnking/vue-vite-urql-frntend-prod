@@ -125,10 +125,10 @@ export default defineComponent({
 });
 </script>
 <template>
-  <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
-    <div class="grid">
-      <div class="col-12 md:col-6">
-        <div class="text-left">
+  <div class="surface-section py-8   ">
+    <div class="grid justify-content-center">
+      <div class="col-8">
+        <div class="text-center">
           <span class="text-6xl font-bold">{{
             data?.contact.data.attributes.header
           }}</span>
@@ -137,7 +137,7 @@ export default defineComponent({
 
         <form class="contact-form" @submit.prevent="submitForm">
           <!-- form start  -->
-          <div class="p-fluid pr-0 md:pr-6 text-left">
+          <div class="p-fluid pr-0  text-left">
             <div class="field text">
               <label for="name" class="font-medium">{{
                 data?.contact.data.attributes.field01
@@ -186,7 +186,7 @@ export default defineComponent({
             <Button
               label="Send Message"
               icon="pi pi-send"
-              class="w-auto font-bold px-5 py-3 mr-0 sm:mr-4 p-button-secondary p-button-rounded p-button-raised white-space-nowrap"
+              class="w-100% font-bold px-5 py-3 mr-0 sm:mr-4 p-button-secondary p-button-rounded p-button-raised white-space-nowrap"
               rounded
               @click="submitForm"
             ></Button>
@@ -195,15 +195,7 @@ export default defineComponent({
         <!-- form end  -->
       </div>
 
-      <div
-        class="col-12 md:col-6 bg-yellow-100 align-items-center justify-content-center p-4"
-      >
-
-      <img
-          :src="data?.contact.data.attributes.brandimage.data?.attributes?.url"
-          alt="J Image"
-          class="w-full border-round"
-        />
+      
         <!-- <div
           class="bg-no-repeat bg-center border-round h-25rem w-full"
           style="background-image: url('src/images/jak_primary_tri_logo.svg')"
@@ -213,7 +205,6 @@ export default defineComponent({
                     <div class="border-2 border-dashed surface-border border-round surface-card ">
                     </div>
                 </div> -->
-      </div>
     </div>
   </div>
 </template>

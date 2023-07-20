@@ -14,9 +14,9 @@ import {
 import LiteYouTubeEmbed from 'vue-lite-youtube-embed';
 
 export default defineComponent({
-    name: "PillarsAndRingsView",
-    props: {},
-    data() {
+  name: "PillarsAndRingsView",
+  props: {},
+  data() {
     return {
       project: {},
       imagetst: {},
@@ -67,6 +67,11 @@ export default defineComponent({
                 lightText
                 lightTextDesc
                 imgStart
+                descimage01
+                descimage02
+                descimage03
+                descimage04
+                descimage05
                 dark
                 primary
                 darkText
@@ -96,20 +101,14 @@ export default defineComponent({
                     }
                 }
                 }
-                image05 {
+                image04 {
                 data {
                     attributes {
                     url
                     }
                 }
                 }
-                image06 {
-                data {
-                    attributes {
-                    url
-                    }
-                }
-                }
+   
                 
             }
             }
@@ -125,23 +124,23 @@ export default defineComponent({
       error: result.error,
     };
   },
-    mounted() {
-        console.log("DexView component mounted");
-    },
+  mounted() {
+    console.log("DexView component mounted");
+  },
 
-    methods: {
-        
-    },
+  methods: {
 
-    components: {
-      LiteYouTubeEmbed
-    },
+  },
+
+  components: {
+    LiteYouTubeEmbed
+  },
 });
 </script>
 
 <template>
   <div class="surface-section px-4 py-6 md:px-6 lg:px-8">
-      <!-- Grid 1 Header Mod-->
+    <!-- Grid 1 Header Mod-->
     <div class="grid bg-yellow-300 mb-6 align-items-center">
       <!-- c1 -->
       <div class="col">
@@ -155,11 +154,8 @@ export default defineComponent({
 
       <!-- c2 -->
       <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-2">
-        <img
-          :src="data?.project.data.attributes.image.data.attributes.url"
-          alt="Image"
-          class="w-full border-round p-3 md: w-8"
-        />
+        <img :src="data?.project.data.attributes.image.data.attributes.url" alt="Image"
+          class="w-full border-round p-3 md: w-8" />
       </div>
     </div>
 
@@ -167,57 +163,42 @@ export default defineComponent({
     <div class="grid">
       <!-- c1 -->
       <div class="col-12 lg:col-2">
-        <div
-          class="flex flex-column lg:flex-column lg:border-right-1 surface-border gap-3 mb-4 lg:px-5"
-        >
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+        <div class="flex flex-column lg:flex-column lg:border-right-1 surface-border gap-3 mb-4 lg:px-5">
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-semibold mr-3">
               {{ data?.project.data.attributes.stacktitle }}
             </span>
             <!-- <i class="pi pi-bookmark"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
-            <span class="font-normal mr-3"
-              >{{ data?.project.data.attributes.stackitemtext_01 }}
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
+            <span class="font-normal mr-3">{{ data?.project.data.attributes.stackitemtext_01 }}
             </span>
             <!-- <i class="pi pi-heart"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_02
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_03
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_04
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_05
             }}</span>
@@ -229,42 +210,37 @@ export default defineComponent({
       <!-- c2 Main Content Area -->
 
       <div class="col-12 lg:col-10 lg:px-5">
-        <div
-          class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5"
-        >
-        <div class="line-height-3 text-lg text-left text-900 mb-5">
-            <div
-              v-html="data?.project.data.attributes.richprojectdescription"
-            ></div>
+        <div class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5">
+          <div class="line-height-3 text-lg text-left text-900 mb-5">
+            <div v-html="data?.project.data.attributes.richprojectdescription"></div>
           </div>
 
 
 
           <!-- #1 Image -->
           <div class="text-center mb-2">
-            <img
-              :src="
-                data?.project.data.attributes.image01.data.attributes.url
-              "
-              alt="Image"
-              class="w-full border-round p-0"
-            />
+            <img :src="data?.project.data.attributes.image01.data.attributes.url
+              " alt="Image" class="w-full border-round p-0" />
             <span class="block text-600 line-height-3">
-              {{ data?.project.data.attributes.descimage01 }}</span
-            >
+              {{ data?.project.data.attributes.descimage01 }}</span>
           </div>
 
-    
+
 
           <!-- #2 Image -->
           <div class="text-center mb-5">
-            <img
-              :src="
-                data?.project.data.attributes.image02.data.attributes.url
-              "
-              alt="Image"
-              class="w-full border-round p-0"
-            />
+            <img :src="data?.project.data.attributes.image02.data.attributes.url
+              " alt="Image" class="w-full border-round p-0" />
+            <span class="block text-600 line-height-3">{{
+              data?.project.data.attributes.descimage02
+            }}</span>
+          </div>
+
+
+          <!-- #3 Image -->
+          <div class="text-center mb-5">
+            <img :src="data?.project.data.attributes.image03.data.attributes.url
+                " alt="Image" class="w-full border-round p-0" />
             <span class="block text-600 line-height-3">{{
               data?.project.data.attributes.descimage03
             }}</span>
@@ -273,43 +249,18 @@ export default defineComponent({
 
           <!-- #3 Image -->
           <div class="text-center mb-5">
-            <img
-              :src="
-                data?.project.data.attributes.image03.data.attributes.url
-              "
-              alt="Image"
-              class="w-full border-round p-0"
-            />
+            <img :src="data?.project.data.attributes.image04.data.attributes.url
+                " alt="Image" class="w-full border-round p-0" />
             <span class="block text-600 line-height-3">{{
-              data?.project.data.attributes.descimage02
-            }}</span>
-          </div>
-       
-       
-                 <!-- #3 Image -->
-                 <div class="text-center mb-5">
-            <img
-              :src="
-                data?.project.data.attributes.image05.data.attributes.url
-              "
-              alt="Image"
-              class="w-full border-round p-0"
-            />
-            <span class="block text-600 line-height-3">{{
-              data?.project.data.attributes.descimage02
+              data?.project.data.attributes.descimage04
             }}</span>
           </div>
         </div>
 
-        
-        <div
-          class="flex flex-wrap justify-content-between align-items-center gap-3 bg-white text-700 p-3 border-round"
-        >
-          <span class="font-bold text-xl"
-            ><i class="pi pi-bolt mr-2"></i
-            >{{ data?.project.data.attributes.title }}</span
-          >
-<div class="flex align-items-center cursor-pointer">
+
+        <div class="flex flex-wrap justify-content-between align-items-center gap-3 bg-white text-700 p-3 border-round">
+          <span class="font-bold text-xl"><i class="pi pi-bolt mr-2"></i>{{ data?.project.data.attributes.title }}</span>
+          <div class="flex align-items-center cursor-pointer">
             <router-link to="/DevSite" class="no-underline">
               <span class="font-normal mr-3">
                 {{ data?.project.data.attributes.nextprojecttext }}
@@ -322,7 +273,7 @@ export default defineComponent({
 
       <!-- Youtube Embed -->
 
-      
+
     </div>
   </div>
 </template>
