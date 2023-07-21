@@ -97,7 +97,7 @@ export default defineComponent({
   methods: {
       async submitForm() {
       axios
-        .post("https://jakvitebackend.herokuapp.com/api/ezforms/submit", {
+        .post("http://localhost:1337/api/ezforms/submit", {
           formData: this.form,
         })
         .then((res) => {
@@ -134,7 +134,9 @@ export default defineComponent({
           }}</span>
           <p>{{ data?.contact.data.attributes.subheader }}</p>
         </div>
-
+        <div v-if="form.response">
+          <p>Message Sent! </p>
+        </div>
         <form class="contact-form" @submit.prevent="submitForm">
           <!-- form start  -->
           <div class="p-fluid pr-0  text-left">
@@ -192,6 +194,7 @@ export default defineComponent({
             ></Button>
           </div>
         </form>
+
         <!-- form end  -->
       </div>
 
