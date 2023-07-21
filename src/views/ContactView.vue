@@ -97,7 +97,7 @@ export default defineComponent({
   methods: {
       async submitForm() {
       axios
-        .post("http://localhost:1337/api/ezforms/submit", {
+        .post("https://jakvitebackend.herokuapp.com/api/ezforms/submit", {
           formData: this.form,
         })
         .then((res) => {
