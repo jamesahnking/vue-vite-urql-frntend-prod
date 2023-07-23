@@ -257,7 +257,7 @@ export default defineComponent({
 
 
     class="bg-bluegray-900 text-gray-100 p-3 flex justify-content-between lg:justify-content-center align-items-center flex-wrap">
-    <span class="no-underline font-bold">Development Projects</span>
+    <span class="no-underline font-bold">Development Examples</span>
   </div>
 
   <!-- Loading -->
