@@ -2,7 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import DexView from "../views/DexView.vue";
 import WalletView from "../views/WalletView.vue";
-import MarketView from "../views/MarketView.vue";
+import MarketPlaceView from "../views/MarketPlaceView.vue";
 import AboutView from "../views/AboutView.vue";
 import ContactView from "../views/ContactView.vue";
 import BlogView from "../views/BlogView.vue";
@@ -33,7 +33,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/NftMarketPlace",
     name: "NftMarketPlace",
-    component: MarketView,
+    component: MarketPlaceView,
   },
 
   {
@@ -81,6 +81,9 @@ const routes: Array<RouteRecordRaw> = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
+  scrollBehavior(to, from, savedPosition) {
+    return { top: 0 }
+  }
 });
 
 export default router;

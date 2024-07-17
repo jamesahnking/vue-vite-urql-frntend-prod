@@ -29,7 +29,10 @@ export default {
 </script>
 
 <template>
+
   <Navigation></Navigation>
+  <ScrollTop />
+
   <router-view></router-view>
   <SiteFooter></SiteFooter>
   

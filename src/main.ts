@@ -18,6 +18,7 @@ import Accordion from "primevue/accordion";
 import InputSwitch from "primevue/inputswitch";
 import InputText from "primevue/inputtext";
 import Textarea from 'primevue/textarea';
+import ScrollTop from 'primevue/scrolltop';
 
 
 // -jic
@@ -69,6 +70,8 @@ app.component("Button", Button);
 app.component("Panel", Panel);
 app.component("Accordion", Accordion);
 app.component("Divider", Divider);
+app.component("Chip", Chip);
+app.component("ScrollTop",ScrollTop);
 app.directive("styleclass", StyleClass);
 app.directive("ripple", Ripple);
 

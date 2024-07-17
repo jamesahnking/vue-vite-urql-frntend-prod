@@ -21,6 +21,7 @@ export default defineComponent({
       project: {},
       imagetst: {},
       strapiUrl: import.meta.env.VITE_STRAPI_URL,
+      githubUrl: 'https://github.com/jamesahnking/vue-vite-urql-frntend-prod',
     };
   },
 
@@ -69,13 +70,17 @@ export default defineComponent({
                 imgStart
                 descimage01
                 descimage02
+                descimage03
+                descimage04
+                descimage05
                 dark
                 primary
                 darkText
                 videoUrl
                 repoUrl
                 richprojectdescription
-           
+                nextprojecttext
+                nextprojectpath
                 image01 {
                 data {
                     attributes {
@@ -84,6 +89,27 @@ export default defineComponent({
                 }
                 }
                 image02 {
+                data {
+                    attributes {
+                    url
+                    }
+                }
+                }
+                image03 {
+                data {
+                    attributes {
+                    url
+                    }
+                }
+                }
+                image04 {
+                data {
+                    attributes {
+                    url
+                    }
+                }
+                }
+                image05 {
                 data {
                     attributes {
                     url
@@ -112,7 +138,6 @@ export default defineComponent({
 
   components: {
     LiteYouTubeEmbed,
-
   },
 });
 </script>
@@ -120,12 +145,10 @@ export default defineComponent({
 <template>
   <div class="surface-section px-4 py-6 md:px-6 lg:px-8">
     <!-- Grid 1 Header Mod-->
-    <div class="grid bg-blue-900 mb-6 align-items-center">
+    <div class="grid bg-blue-200 mb-6 align-items-center">
       <!-- c1 -->
-      <div class="col sm:px-2 md:px-6 md:pt-6 lg:px-7">
-        <div
-          class="sm:text-4xl md:text-6xl lg:text-6xl xl:text-7xl text-6xl font-bold text-white"
-        >
+      <div class="col lg:w-6">
+        <div class="text-6xl font-bold text-white">
           {{ data?.project.data.attributes.title }}
         </div>
         <div class="line-height-3 text-white mt-3 sm:text-sm md:text-lg">
@@ -134,14 +157,9 @@ export default defineComponent({
       </div>
 
       <!-- c2 -->
-      <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-5">
-        <img
-          :src="
-            data?.project.data.attributes.image.data.attributes.url
-          "
-          alt="Image"
-          class="w-full border-round p-3"
-        />
+      <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-2">
+        <img :src="data?.project.data.attributes.image.data.attributes.url" alt="Image"
+          class="w-full border-round p-3 md: w-8" />
       </div>
     </div>
 
@@ -149,75 +167,54 @@ export default defineComponent({
     <div class="grid">
       <!-- c1 -->
       <div class="col-12 lg:col-2">
-        <div
-          class="flex flex-column lg:flex-column lg:border-right-1 surface-border gap-3 mb-4 lg:px-5"
-        >
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+        <div class="flex flex-column lg:flex-column lg:border-right-1 surface-border gap-3 mb-4 lg:px-5">
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-semibold mr-3">
               {{ data?.project.data.attributes.stacktitle }}
             </span>
             <!-- <i class="pi pi-bookmark"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
-            <span class="font-normal mr-3"
-              >{{ data?.project.data.attributes.stackitemtext_01 }}
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
+            <span class="font-normal mr-3">{{ data?.project.data.attributes.stackitemtext_01 }}
             </span>
             <!-- <i class="pi pi-heart"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_02
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_03
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_04
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_05
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
-          
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_06
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
-
-          <div
-            class="text-900 flex flex-row align-items-center justify-content-start"
-          >
+          <div class="text-900 flex flex-row align-items-center justify-content-start">
             <span class="font-normal mr-3">{{
               data?.project.data.attributes.stackitemtext_07
             }}</span>
@@ -229,51 +226,84 @@ export default defineComponent({
       <!-- c2 Main Content Area -->
 
       <div class="col-12 lg:col-10 lg:px-5">
-        <div
-          class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5"
-        >
+        <div class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5">
+
+          <!-- Github Repo -->
+          <div class="col-12">
+            <a :href="githubUrl" target="_blank">
+              <div class="p-3 border-1 surface-border border-round surface-card">
+
+                <div class="text-900 mb-2">
+                  <i class="pi pi-github mr-2"></i>
+                  <span class="font-medium">Github</span>
+                </div>
+                <div class="text-700">
+                  Checkout the {{ data?.project.data.attributes.title }} project
+                  repository
+                </div>
+
+              </div>
+            </a>
+          </div>
 
           <!-- #1 Image -->
           <div class="text-center mb-2">
-            <img
-              :src="
-                data?.project.data.attributes.image01.data?.attributes.url
-              "
-              alt="Image"
-              class="w-full border-round p-0"
-            />
+            <img :src="data?.project.data.attributes.image01.data?.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
             <span class="block text-600 line-height-3">
-              {{ data?.project.data.attributes.descimage01 }}</span
-            >
+              {{ data?.project.data.attributes.descimage01 }}</span>
           </div>
 
-        <div class="line-height-3 text-lg text-left text-900 mb-5">
-            <div
-              v-html="data?.project.data.attributes.richprojectdescription"
-            ></div>
+          <div class="line-height-3 text-lg text-left text-900 mb-5">
+            <div v-html="data?.project.data.attributes.richprojectdescription"></div>
           </div>
-        
-
 
           <!-- #2 Image -->
-          <!-- <div class="text-center mb-5">
-            <img
-              :src="
-                strapiUrl +
-                data?.project.data.attributes.image02.data.attributes.url
-              "
-              alt="Image"
-              class="w-full border-round p-0"
-            />
-            <span class="block text-600 line-height-3">{{
-              data?.project.data.attributes.descimage02
-            }}</span>
-          </div>-->
-        </div> 
+          <div class="text-center mb-2">
+            <img :src="data?.project.data.attributes.image02.data?.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
+            <span class="block text-600 line-height-3">
+              {{ data?.project.data.attributes.descimage02 }}</span>
+          </div>
+
+
+          <!-- #3 Image -->
+
+          <div class="text-center mb-2">
+            <img :src="data?.project.data.attributes.image03.data?.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
+            <span class="block text-600 line-height-3">
+              {{ data?.project.data.attributes.descimage03 }}</span>
+          </div>
+
+          <!-- #4 Image -->
+
+          <div class="text-center mb-2">
+            <img :src="data?.project.data.attributes.image04.data?.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
+            <span class="block text-600 line-height-3">
+              {{ data?.project.data.attributes.descimage04 }}
+            </span>
+
+          </div>
+
+          <!-- #5 Image -->
+
+          <div class="text-center mb-2">
+            <img :src="data?.project.data.attributes.image05.data?.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
+            <span class="block text-600 line-height-3">
+              {{ data?.project.data.attributes.descimage05 }}
+            </span>
+          </div>
+
+        </div>
 
         <!-- Youtube Embed -->
 
-        <div v-if="data?.project.data.attributes.videoUrl" class="loading-state">Loading...</div>
+        <div v-if="data?.project.data.attributes.videoUrl" class="loading-state">
+          Loading...
+        </div>
         <div v-else class="surface-section px-0 py-0">
           <!-- rest of your template -->
           <!-- Youtube Embed -->
@@ -283,17 +313,22 @@ export default defineComponent({
           /> -->
         </div>
 
-        <div
-          class="flex flex-wrap justify-content-between align-items-center gap-3 bg-white text-700 p-3 border-round"
-        >
-          <span class="font-bold text-xl"
-            ><i class="pi pi-bolt mr-2"></i
-            >{{ data?.project.data.attributes.title }}</span
-          >
+        <div class="flex flex-wrap justify-content-between align-items-center gap-3 bg-white text-700 p-3 border-round">
+          <span class="font-bold text-xl"><i class="pi pi-bolt mr-2"></i>{{ data?.project.data.attributes.title }}</span>
+
+          <!-- Next Project Text/Button -->
+
           <div class="flex align-items-center cursor-pointer">
-            <span class="font-normal mr-3">View Next Project</span>
-            <i class="pi pi-arrow-right"></i>
+            <router-link to="/NftMarketPlace" class="no-underline">
+              <span class="font-normal mr-3">
+                {{ data?.project.data.attributes.nextprojecttext }}
+              </span>
+
+              <i class="pi pi-arrow-right"></i>
+            </router-link>
           </div>
+
+
         </div>
       </div>
 
@@ -301,3 +336,9 @@ export default defineComponent({
     </div>
   </div>
 </template>
+
+<style scoped>
+a:link {
+  text-decoration: none;
+}
+</style>
