@@ -99,6 +99,10 @@ export default defineComponent({
                     class="cursor-pointer text-500 transition-colors transition-duration-150 hover:text-700 px-2">
                     <i><font-awesome-icon icon="fa-brands fa-github" size="xl" /></i>
                 </a>
+                <a :href=mediumlink target="_blank"
+                    class="cursor-pointer text-500 transition-colors transition-duration-150 hover:text-700 px-2">
+                    <i><font-awesome-icon icon="fa-brands fa-medium" size="xl" /></i>
+                </a>
 
                 <a :href="data?.navigation.data.attributes.linkedinlink" target="_blank"
                     class="cursor-pointer text-500 transition-colors transition-duration-150 hover:text-700 px-2">
