@@ -110,11 +110,10 @@ export default defineComponent({
                 class="bg-grey-900 list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row surface-900">
                 
                 <li class="lg:relative">
-                <a v-ripple class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
+                <a v-ripple class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-0 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
                     v-styleclass="{ selector: '@next', enterClass: 'hidden', enterActiveClass: 'scalein', leaveToClass: 'hidden', leaveActiveClass: 'fadeout', hideOnOutsideClick: true }">
                     <i class="pi pi-chevron-circle-down mr-2"></i>
-                    <span>Projects</span>
-                    <i class="pi pi-bullseye ml-auto lg:ml-3"></i>
+                    <span>Project List</span>
                 </a>
                 <ul class="list-none py-3 px-6 m-0 lg:px-0 lg:py-0 border-round shadow-0 lg:shadow-2 lg:border-1 border-50 lg:absolute surface-overlay hidden origin-top w-full lg:w-15rem cursor-pointer">
                     <router-link to="/PineLangView" class="no-underline">
