@@ -145,13 +145,13 @@ export default defineComponent({
 <template>
   <div class="surface-section px-4 py-6 md:px-6 lg:px-8">
     <!-- Grid 1 Header Mod-->
-    <div class="grid bg-blue-200 mb-6 align-items-center">
+    <div class="grid mb-6 align-items-center">
       <!-- c1 -->
       <div class="col lg:w-6">
-        <div class="text-6xl font-bold text-white">
+        <div class="text-6xl font-bold text-600">
           {{ data?.project.data.attributes.title }}
         </div>
-        <div class="line-height-3 text-white mt-3 sm:text-sm md:text-lg">
+        <div class="line-height-3 text-800 mt-3 sm:text-sm md:text-lg">
           {{ data?.project.data.attributes.description }}
         </div>
       </div>
