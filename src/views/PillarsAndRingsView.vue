@@ -1,7 +1,6 @@
 // Vue Component Template for Project
 <script lang="ts">
-
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 import {
   createClient,
   dedupExchange,
@@ -11,7 +10,7 @@ import {
   useQuery,
 } from "@urql/vue";
 
-import LiteYouTubeEmbed from 'vue-lite-youtube-embed';
+import LiteYouTubeEmbed from "vue-lite-youtube-embed";
 
 export default defineComponent({
   name: "PillarsAndRingsView",
@@ -21,8 +20,8 @@ export default defineComponent({
       project: {},
       imagetst: {},
       strapiUrl: import.meta.env.VITE_STRAPI_URL,
-      githubUrl: 'https://github.com/jamesahnking/DevSite',
-
+      githubUrl: "https://github.com/jamesahnking/pillarsandringsmintdapp",
+      githubUrl2: "https://github.com/jamesahnking/nftgenerator"
     };
   },
 
@@ -128,12 +127,10 @@ export default defineComponent({
     console.log("DexView component mounted");
   },
 
-  methods: {
-
-  },
+  methods: {},
 
   components: {
-    LiteYouTubeEmbed
+    LiteYouTubeEmbed,
   },
 });
 </script>
@@ -154,8 +151,11 @@ export default defineComponent({
 
       <!-- c2 -->
       <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-2">
-        <img :src="data?.project.data.attributes?.image.data.attributes.url" alt="Image"
-          class="w-full border-round p-3 md: w-8" />
+        <img
+          :src="data?.project.data.attributes?.image.data.attributes.url"
+          alt="Image"
+          class="w-full border-round p-3 md: w-8"
+        />
       </div>
     </div>
 
@@ -163,42 +163,57 @@ export default defineComponent({
     <div class="grid">
       <!-- c1 -->
       <div class="col-12 lg:col-2">
-        <div class="flex flex-column lg:flex-column lg:border-right-1 surface-border gap-3 mb-4 lg:px-5">
-          <div class="text-900 flex flex-row align-items-center justify-content-start">
+        <div
+          class="flex flex-column lg:flex-column lg:border-right-1 surface-border gap-3 mb-4 lg:px-5"
+        >
+          <div
+            class="text-900 flex flex-row align-items-center justify-content-start"
+          >
             <span class="font-semibold mr-3">
               {{ data?.project.data.attributes?.stacktitle }}
             </span>
             <!-- <i class="pi pi-bookmark"></i> -->
           </div>
 
-          <div class="text-900 flex flex-row align-items-center justify-content-start">
-            <span class="font-normal mr-3">{{ data?.project.data.attributes?.stackitemtext_01 }}
+          <div
+            class="text-900 flex flex-row align-items-center justify-content-start"
+          >
+            <span class="font-normal mr-3"
+              >{{ data?.project.data.attributes?.stackitemtext_01 }}
             </span>
             <!-- <i class="pi pi-heart"></i> -->
           </div>
 
-          <div class="text-900 flex flex-row align-items-center justify-content-start">
+          <div
+            class="text-900 flex flex-row align-items-center justify-content-start"
+          >
             <span class="font-normal mr-3">{{
               data?.project.data.attributes?.stackitemtext_02
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div class="text-900 flex flex-row align-items-center justify-content-start">
+          <div
+            class="text-900 flex flex-row align-items-center justify-content-start"
+          >
             <span class="font-normal mr-3">{{
               data?.project.data.attributes?.stackitemtext_03
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div class="text-900 flex flex-row align-items-center justify-content-start">
+          <div
+            class="text-900 flex flex-row align-items-center justify-content-start"
+          >
             <span class="font-normal mr-3">{{
               data?.project.data.attributes?.stackitemtext_04
             }}</span>
             <!-- <i class="pi pi-comments"></i> -->
           </div>
 
-          <div class="text-900 flex flex-row align-items-center justify-content-start">
+          <div
+            class="text-900 flex flex-row align-items-center justify-content-start"
+          >
             <span class="font-normal mr-3">{{
               data?.project.data.attributes?.stackitemtext_05
             }}</span>
@@ -210,56 +225,121 @@ export default defineComponent({
       <!-- c2 Main Content Area -->
 
       <div class="col-12 lg:col-10 lg:px-5">
-        <div class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5">
-          <div class="line-height-3 text-lg text-left text-900 mb-5">
-            <div v-html="data?.project.data.attributes?.richprojectdescription"></div>
+        <div
+          class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5"
+        >
+          <!-- Github Repo -->
+          <div class="col-12 bg-teal-100">
+            <a :href="githubUrl" target="_blank">
+              <div
+                class="p-3 border-round shadow-2 flex align-items-center text-left surface-card"
+              >
+                <div
+                  style="width: 48px; height: 48px; border-radius: 10px"
+                  class="bg-teal-100 inline-flex align-items-center justify-content-center mr-3"
+                >
+                  <i class="pi pi-github text-teal-600 text-3xl"></i>
+                </div>
+                <div>
+                  <span class="text-900 text-xl font-medium mb-2">Github</span>
+                  <p class="mt-1 mb-0 text-600 font-medium text-sm">
+                    {{ data?.project.data.attributes.title }}
+                    minter repository
+                  </p>
+                </div>
+              </div>
+            </a>
           </div>
 
+          <!-- Github Repo -->
+          <div class="col-12 bg-teal-100">
+            <a :href="githubUrl2" target="_blank">
+              <div
+                class="p-3 border-round shadow-2 flex align-items-center text-left surface-card"
+              >
+                <div
+                  style="width: 48px; height: 48px; border-radius: 10px"
+                  class="bg-teal-100 inline-flex align-items-center justify-content-center mr-3"
+                >
+                  <i class="pi pi-github text-teal-600 text-3xl"></i>
+                </div>
+                <div>
+                  <span class="text-900 text-xl font-medium mb-2">Github</span>
+                  <p class="mt-1 mb-0 text-600 font-medium text-sm">
+                    {{ data?.project.data.attributes.title }}
+                    repository
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
 
+          <div class="line-height-3 text-lg text-left text-900 mb-5">
+            <div
+              v-html="data?.project.data.attributes?.richprojectdescription"
+            ></div>
+          </div>
 
           <!-- #1 Image -->
           <div class="text-center mb-2">
-            <img :src="data?.project?.data?.attributes?.image01.data?.attributes?.url
-              " alt="Image" class="w-full border-round p-0" />
+            <img
+              :src="
+                data?.project?.data?.attributes?.image01.data?.attributes?.url
+              "
+              alt="Image"
+              class="w-full border-round p-0"
+            />
             <span class="block text-600 line-height-3">
-              {{ data?.project.data.attributes.descimage01 }}</span>
+              {{ data?.project.data.attributes.descimage01 }}</span
+            >
           </div>
-
-
 
           <!-- #2 Image -->
           <div class="text-center mb-5">
-            <img :src="data?.project?.data?.attributes?.image02.data.attributes.url
-              " alt="Image" class="w-full border-round p-0" />
+            <img
+              :src="
+                data?.project?.data?.attributes?.image02.data.attributes.url
+              "
+              alt="Image"
+              class="w-full border-round p-0"
+            />
             <span class="block text-600 line-height-3">{{
               data?.project?.data?.attributes?.descimage02
             }}</span>
           </div>
 
-
           <!-- #3 Image -->
           <div class="text-center mb-5">
-            <img :src="data?.project.data.attributes.image03.data.attributes.url
-                " alt="Image" class="w-full border-round p-0" />
+            <img
+              :src="data?.project.data.attributes.image03.data.attributes.url"
+              alt="Image"
+              class="w-full border-round p-0"
+            />
             <span class="block text-600 line-height-3">{{
               data?.project?.data?.attributes?.descimage03
             }}</span>
           </div>
 
-
           <!-- #3 Image -->
           <div class="text-center mb-5">
-            <img :src="data?.project.data.attributes.image04.data.attributes.url
-                " alt="Image" class="w-full border-round p-0" />
+            <img
+              :src="data?.project.data.attributes.image04.data.attributes.url"
+              alt="Image"
+              class="w-full border-round p-0"
+            />
             <span class="block text-600 line-height-3">{{
               data?.project?.data?.attributes?.descimage04
             }}</span>
           </div>
         </div>
 
-
-        <div class="flex flex-wrap justify-content-between align-items-center gap-3 bg-white text-700 p-3 border-round">
-          <span class="font-bold text-xl"><i class="pi pi-bolt mr-2"></i>{{ data?.project.data.attributes.title }}</span>
+        <div
+          class="flex flex-wrap justify-content-between align-items-center gap-3 bg-white text-700 p-3 border-round"
+        >
+          <span class="font-bold text-xl"
+            ><i class="pi pi-bolt mr-2"></i
+            >{{ data?.project.data.attributes.title }}</span
+          >
           <div class="flex align-items-center cursor-pointer">
             <router-link to="/DevSite" class="no-underline">
               <span class="font-normal mr-3">
@@ -272,8 +352,11 @@ export default defineComponent({
       </div>
 
       <!-- Youtube Embed -->
-
-
     </div>
   </div>
 </template>
+<style scoped>
+a:link {
+  text-decoration: none;
+}
+</style>
