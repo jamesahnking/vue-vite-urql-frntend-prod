@@ -204,19 +204,21 @@ export default defineComponent({
 
       <div class="col-12 lg:col-10 lg:px-5">
         <div class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5">
-          <!-- Github Repo -->
-          <div class="col-12">
+               <!-- Github Repo -->
+               <div class="col-12 bg-teal-100">
             <a :href="githubUrl" target="_blank">
-              <div class="p-3 border-1 surface-border border-round surface-card">
-                <div class="text-900 mb-2">
-                  <i class="pi pi-github mr-2"></i>
-                  <span class="font-medium">Github</span>
+
+            <div class="p-3 border-round shadow-2 flex align-items-center text-left surface-card">
+                <div style="width:48px;height:48px;border-radius:10px" class="bg-teal-100 inline-flex align-items-center justify-content-center mr-3">
+                    <i class="pi pi-github text-teal-600 text-3xl"></i>
                 </div>
-                <div class="text-700">
-                  Checkout the {{ data?.project.data.attributes.title }} project
-                  repository
-                </div>
-              </div>
+                <div>
+                    <span class="text-900 text-xl font-medium mb-2">Github</span>
+                    <p class="mt-1 mb-0 text-600 font-medium text-sm">{{ data?.project.data.attributes.title }} 
+                    repository
+                  </p>
+                </div>            
+            </div>
             </a>
           </div>
 

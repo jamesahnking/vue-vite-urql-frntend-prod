@@ -174,9 +174,6 @@ export default defineComponent({
                         </a>
                     </li>
                 </router-link>
-
-
-
                 </ul>
             </li>
                 <!-- Nav Item 1 -->
@@ -266,7 +263,7 @@ export default defineComponent({
                 </router-link> -->
                 
 
-                <li>
+                <!-- <li>
                     <a :href="githublink" target="_blank" v-ripple
                         class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple">
                         <span><font-awesome-icon icon="fa-brands fa-github" size="lg" /></span>
@@ -283,23 +280,56 @@ export default defineComponent({
                         class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple">
                         <span><font-awesome-icon icon="fa-brands fa-linkedin" size="lg" /></span>
                     </a>
-                </li>
+                </li> -->
 
-
-                <!-- <router-link to="/Contact">
+<!-- Medium st -->
                     <li>
-                        <a v-ripple class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-sm text-600"
-                        v-styleclass="{
+                
+                        <a :href="linkedInlink" target="_blank" v-ripple
+                        class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center no-underline text-sm text-100 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
+                            v-styleclass="{
                                 selector: '.flag',
                                 enterClass: 'hidden',
                                 leaveToClass: 'hidden',
                             }">
-                        
-                            <span><Button label="Contact Me" class="text-sm p-button-secondary" rounded /></span>
+                            <font-awesome-icon icon="fa-brands fa-linkedin" size="lg" /> 
+                                    <span class="lg:px-2">LinkedIn</span>
                         </a>
                     </li>
-                </router-link> -->
-            </ul>
+<!-- Medium ed -->
+<!-- GitHub st -->
+                    <li>
+                
+                        <a :href="githublink" target="_blank" v-ripple
+                        class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center no-underline text-sm text-100 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
+                            v-styleclass="{
+                                selector: '.flag',
+                                enterClass: 'hidden',
+                                leaveToClass: 'hidden',
+                            }">
+                            <font-awesome-icon icon="fa-brands fa-github" size="lg" /> 
+                                    <span class="lg:px-2">GitHub</span>
+                        </a>
+                    </li>
+<!-- GitHub ed -->
+<!-- Medium st -->
+                    <li>
+                
+                        <a :href="mediumlink" target="_blank" v-ripple
+                        class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center no-underline text-sm text-100 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
+                            v-styleclass="{
+                                selector: '.flag',
+                                enterClass: 'hidden',
+                                leaveToClass: 'hidden',
+                            }">
+                            <font-awesome-icon icon="fa-brands fa-medium" size="lg" /> 
+                                    <span class="lg:px-2">Medium</span>
+                        </a>
+                    </li>
+<!-- Medium ed -->
+
+
+                </ul>
         </div>
     </div>
 </template>

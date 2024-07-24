@@ -22,6 +22,7 @@ export default defineComponent({
       imagetst: {},
       strapiUrl: import.meta.env.VITE_STRAPI_URL,
       githubUrl: 'https://github.com/jamesahnking/pinecone-langchain-dataloaders',
+      mediumUrl: 'https://medium.com/@jamesahnking/riding-on-chains-with-a-pinecone-3a79e4a474df',
     };
   },
 
@@ -230,22 +231,44 @@ export default defineComponent({
         <div class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5">
 
           <!-- Github Repo -->
-          <div class="col-12">
+          <div class="col-12 bg-teal-100">
             <a :href="githubUrl" target="_blank">
-              <div class="p-3 border-1 surface-border border-round surface-card">
 
-                <div class="text-900 mb-2">
-                  <i class="pi pi-github mr-2"></i>
-                  <span class="font-medium">Github</span>
+            <div class="p-3 border-round shadow-2 flex align-items-center text-left surface-card">
+                <div style="width:48px;height:48px;border-radius:10px" class="bg-teal-100 inline-flex align-items-center justify-content-center mr-3">
+                    <i class="pi pi-github text-teal-600 text-3xl"></i>
                 </div>
-                <div class="text-700">
-                  Checkout the {{ data?.project.data.attributes.title }} project
-                  repository
-                </div>
-
-              </div>
+                <div>
+                    <span class="text-900 text-xl font-medium mb-2">Github</span>
+                    <p class="mt-1 mb-0 text-600 font-medium text-sm">{{ data?.project.data.attributes.title }} 
+                    repository
+                  </p>
+                </div>            
+            </div>
             </a>
           </div>
+
+          <!-- Medium Module -->
+          <div class="col-12 bg-gray-700 ">
+            <a :href="mediumUrl" target="_blank">
+
+            <div class="p-3 border-round shadow-2 flex align-items-center text-left surface-card">
+                <div style="width:48px;height:48px;border-radius:10px" class="bg-gray-900 inline-flex align-items-center justify-content-center mr-3">
+                    <i class="pi pi-med text-white text-3xl">
+                      <font-awesome-icon icon="fa-brands fa-medium" size="lg" /> 
+                    </i>
+                </div>
+                <div>
+                    <span class="text-600 text-xs font-bold mb-2">This Project On Medium:</span>
+                    <p class="mt-1 mb-0 text-900 font-bold text-md">Riding On Chains with a Pinecone</p>
+                    <p class="mt-1 mb-0 text-900 text-sm">Directory-based bulk data loading with Pinecone and LangChain
+                    </p>
+                </div>            
+            </div>
+            </a>
+          </div>
+
+
 
           <!-- #1 Image -->
 
