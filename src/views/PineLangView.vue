@@ -10,20 +10,19 @@ import {
   useQuery,
 } from "@urql/vue";
 
-// Vue Lite Player
 import LiteYouTubeEmbed from "vue-lite-youtube-embed";
 import "vue-lite-youtube-embed/style.css";
 
 export default defineComponent({
-  name: "DexView",
+  name: "PineLangView",
   props: {},
   data() {
     return {
       project: {},
       imagetst: {},
       strapiUrl: import.meta.env.VITE_STRAPI_URL,
-      githubUrl: 'https://github.com/jamesahnking/dexClient',
-
+      githubUrl: 'https://github.com/jamesahnking/pinecone-langchain-dataloaders',
+      mediumUrl: 'https://medium.com/@jamesahnking/riding-on-chains-with-a-pinecone-3a79e4a474df',
     };
   },
 
@@ -38,7 +37,7 @@ export default defineComponent({
     const result = useQuery({
       query: `
       {
-        project(id: 3) {
+        project(id: 6) {
             data {
             id
             attributes {
@@ -73,6 +72,8 @@ export default defineComponent({
                 descimage01
                 descimage02
                 descimage03
+                descimage04
+                descimage05
                 dark
                 primary
                 darkText
@@ -88,13 +89,6 @@ export default defineComponent({
                     }
                 }
                 }
-                image01 {
-                data {
-                    attributes {
-                    url
-                    }
-                }
-                }
                 image02 {
                 data {
                     attributes {
@@ -103,6 +97,20 @@ export default defineComponent({
                 }
                 }
                 image03 {
+                data {
+                    attributes {
+                    url
+                    }
+                }
+                }
+                image04 {
+                data {
+                    attributes {
+                    url
+                    }
+                }
+                }
+                image05 {
                 data {
                     attributes {
                     url
@@ -138,9 +146,10 @@ export default defineComponent({
 <template>
   <div class="surface-section px-4 py-6 md:px-6 lg:px-8">
     <!-- Grid 1 Header Mod-->
+    <!-- <div class="grid bg-blue-200 mb-6 align-items-center"> -->
     <div class="grid mb-6 align-items-center">
       <!-- c1 -->
-      <div class="col">
+      <div class="col lg:w-6">
         <div class="text-6xl font-bold text-600">
           {{ data?.project.data.attributes.title }}
         </div>
@@ -148,7 +157,6 @@ export default defineComponent({
           {{ data?.project.data.attributes.description }}
         </div>
       </div>
-
 
       <!-- c2 -->
       <div class="col w-full col-12 lg:w-6 pl-0 lg:pr-5 pt-2">
@@ -240,59 +248,112 @@ export default defineComponent({
             </a>
           </div>
 
+          <!-- Medium Module -->
+          <div class="col-12 bg-gray-700 ">
+            <a :href="mediumUrl" target="_blank">
+
+            <div class="p-3 border-round shadow-2 flex align-items-center text-left surface-card">
+                <div style="width:48px;height:48px;border-radius:10px" class="bg-gray-900 inline-flex align-items-center justify-content-center mr-3">
+                    <i class="pi pi-med text-white text-3xl">
+                      <font-awesome-icon icon="fa-brands fa-medium" size="lg" /> 
+                    </i>
+                </div>
+                <div>
+                    <span class="text-600 text-xs font-bold mb-2">This Project On Medium:</span>
+                    <p class="mt-1 mb-0 text-900 font-bold text-md">Riding On Chains with a Pinecone</p>
+                    <p class="mt-1 mb-0 text-900 text-sm">Directory-based bulk data loading with Pinecone and LangChain
+                    </p>
+                </div>            
+            </div>
+            </a>
+          </div>
+
+
 
           <!-- #1 Image -->
-          <div class="text-center mb-2">
-            <img :src="data?.project.data.attributes.image01.data.attributes.url" alt="Image"
+
+          <!-- <div class="text-center mb-2">
+            <img :src="data?.project.data.attributes.image01.data?.attributes.url" alt="Image"
               class="w-full border-round p-0" />
             <span class="block text-600 line-height-3">
               {{ data?.project.data.attributes.descimage01 }}</span>
+          </div> -->
+
+          <div class="line-height-3 text-lg text-left text-900 mb-5">
+            <div v-html="data?.project.data.attributes.richprojectdescription"></div>
           </div>
-        </div>
+
+          <!-- #2 Image -->
+
+          <!-- <div class="text-center mb-2">
+            <img :src="data?.project.data.attributes.image02.data?.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
+            <span class="block text-600 line-height-3">
+              {{ data?.project.data.attributes.descimage02 }}</span>
+          </div> -->
 
 
-        <!-- #2 Image -->
-        <div class="text-center mb-5">
-          <img :src="data?.project.data.attributes.image02.data.attributes.url" alt="Image"
-            class="w-full border-round p-0" />
-          <span class="block text-600 line-height-3">{{
-            data?.project.data.attributes.descimage02
-          }}</span>
-        </div>
+          <!-- #3 Image -->
 
+          <!-- <div class="text-center mb-2">
+            <img :src="data?.project.data.attributes.image03.data?.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
+            <span class="block text-600 line-height-3">
+              {{ data?.project.data.attributes.descimage03 }}</span>
+          </div> -->
 
-        <!-- #3 Image -->
-        <div class="text-center mb-5">
-          <img :src="data?.project.data.attributes.image03.data.attributes.url" alt="Image"
-            class="w-full border-round p-0" />
-          <span class="block text-600 line-height-3">{{
-            data?.project.data.attributes.descimage03
-          }}</span>
-        </div>
+          <!-- #4 Image -->
 
-      
-        <div class="line-height-3 text-lg text-left text-900 mb-5">
-          <div v-html="data?.project.data.attributes.richprojectdescription"></div>
+          <!-- <div class="text-center mb-2">
+            <img :src="data?.project.data.attributes.image04.data?.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
+            <span class="block text-600 line-height-3">
+              {{ data?.project.data.attributes.descimage04 }}
+            </span>
+
+          </div> -->
+
+          <!-- #5 Image -->
+
+          <!-- <div class="text-center mb-2">
+            <img :src="data?.project.data.attributes.image05.data?.attributes.url" alt="Image"
+              class="w-full border-round p-0" />
+            <span class="block text-600 line-height-3">
+              {{ data?.project.data.attributes.descimage05 }}
+            </span>
+          </div> -->
+
         </div>
 
         <!-- Youtube Embed -->
 
-        <!-- rest of your template -->
-        <!-- Youtube Embed -->
-        <LiteYouTubeEmbed :id="data?.project.data.attributes.videoUrl"
-          title="Rick Astley - Never Gonna Give You Up (Official Music Video)" />
-        <!-- Project Footer tiltle and Next Button -->
+        <div v-if="data?.project.data.attributes.videoUrl" class="loading-state">
+          Loading...
+        </div>
+        <div v-else class="surface-section px-0 py-0">
+          <!-- rest of your template -->
+          <!-- Youtube Embed -->
+          <!-- <LiteYouTubeEmbed
+            :id="data?.project.data.attributes.videoUrl"
+            title="Rick Astley - Never Gonna Give You Up (Official Music Video)"
+          /> -->
+        </div>
+
         <div class="flex flex-wrap justify-content-between align-items-center gap-3 bg-white text-700 p-3 border-round">
           <span class="font-bold text-xl"><i class="pi pi-bolt mr-2"></i>{{ data?.project.data.attributes.title }}</span>
 
+          <!-- Next Project Text/Button -->
+
           <div class="flex align-items-center cursor-pointer">
-            <router-link to="/PillarsAndRings" class="no-underline">
+            <router-link to="/NftMarketPlace" class="no-underline">
               <span class="font-normal mr-3">
                 {{ data?.project.data.attributes.nextprojecttext }}
               </span>
+
               <i class="pi pi-arrow-right"></i>
             </router-link>
           </div>
+
 
         </div>
       </div>

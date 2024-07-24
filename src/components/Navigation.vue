@@ -48,6 +48,7 @@ export default defineComponent({
                         navitem04
                         navitem05
                         navitem06   
+                        navitem08
                         linkedinlink
                         githublink
                         buttontext
@@ -103,11 +104,80 @@ export default defineComponent({
         <!-- Menu Item List -->
         <div
             class="align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 top-100 z-1 shadow-2 lg:shadow-none flag">
+            
+            <!-- Project Dropdown menue -->
             <ul
                 class="bg-grey-900 list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row surface-900">
                 
+                <li class="lg:relative">
+                <a v-ripple class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-0 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
+                    v-styleclass="{ selector: '@next', enterClass: 'hidden', enterActiveClass: 'scalein', leaveToClass: 'hidden', leaveActiveClass: 'fadeout', hideOnOutsideClick: true }">
+                    <i class="pi pi-chevron-circle-down mr-2"></i>
+                    <span>Project List</span>
+                </a>
+                <ul class="list-none py-3 px-6 m-0 lg:px-0 lg:py-0 border-round shadow-0 lg:shadow-2 lg:border-1 border-50 lg:absolute surface-overlay hidden origin-top w-full lg:w-15rem cursor-pointer">
+                    <router-link to="/PineLangView" class="no-underline">
+
+                        <li>
+                            <a v-ripple class="flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 transition-colors transition-duration-150 p-ripple">
+                                <i class="pi pi-chevron-right mr-2 text-xs"></i>
+                                <span class="font-medium">{{ data?.navigation.data.attributes.navitem08 }}</span>
+                            </a>
+                        </li>
+                    </router-link>
+                    <router-link to="/DevSite" class="no-underline">
+
+                    <li class="relative">
+                        <a v-ripple class="flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 transition-colors transition-duration-150 p-ripple">
+                            <i class="pi pi-chevron-right mr-2 text-xs"></i>
+                            <span class="font-medium">{{ data?.navigation.data.attributes.navitem01 }}</span>
+                        </a>
+
+                    </li>
+                </router-link>
+                <router-link to="/NftMarketPlace" class="no-underline">
+
+                    <li class="relative">
+                        <a v-ripple class="flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 transition-colors transition-duration-150 p-ripple">
+                            <i class="pi pi-chevron-right mr-2 text-xs"></i>
+                            <span class="font-medium">{{ data?.navigation.data.attributes.navitem02 }}</span>
+                        </a>
+
+                    </li>
+                </router-link>
+
+                <router-link to="/MultiSigWallet" class="no-underline">
+
+                    <li class="relative">
+                        <a v-ripple class="flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 transition-colors transition-duration-150 p-ripple">
+                            <i class="pi pi-chevron-right mr-2 text-xs"></i>
+                            <span class="font-medium">{{ data?.navigation.data.attributes.navitem03 }}</span>
+                        </a>
+                    </li>
+
+                </router-link>
+                <router-link to="/Adex" class="no-underline">
+
+                    <li class="relative">
+                        <a v-ripple class="flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 transition-colors transition-duration-150 p-ripple">
+                            <i class="pi pi-chevron-right mr-2 text-xs"></i>
+                            <span class="font-medium">{{ data?.navigation.data.attributes.navitem04 }}</span>
+                        </a>
+                    </li>
+                </router-link>
+                <router-link to="/PillarsAndRings" class="no-underline">
+
+                    <li class="relative">
+                        <a v-ripple class="flex p-3 align-items-center text-600 hover:text-900 hover:surface-100 transition-colors transition-duration-150 p-ripple">
+                            <i class="pi pi-chevron-right mr-2 text-xs"></i>
+                            <span class="font-medium">{{ data?.navigation.data.attributes.navitem05 }}</span>
+                        </a>
+                    </li>
+                </router-link>
+                </ul>
+            </li>
                 <!-- Nav Item 1 -->
-                <router-link to="/DevSite" class="no-underline">
+                <!-- <router-link to="/DevSite" class="no-underline">
                     <li>
                         <a v-ripple
                             class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-sm text-100 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
@@ -175,9 +245,9 @@ export default defineComponent({
                             <span>{{ data?.navigation.data.attributes.navitem05 }}</span>
                         </a>
                     </li>
-                </router-link>
+                </router-link> -->
 
-                <router-link to="/About" class="no-underline">
+                <!-- <router-link to="/About" class="no-underline">
                     <li>
                         <a v-ripple
                             class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-sm text-100 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
@@ -190,12 +260,19 @@ export default defineComponent({
                             <span>{{ data?.navigation.data.attributes.navitem06 }}</span>
                         </a>
                     </li>
-                </router-link>
+                </router-link> -->
+                
 
-                <li>
+                <!-- <li>
                     <a :href="githublink" target="_blank" v-ripple
                         class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple">
                         <span><font-awesome-icon icon="fa-brands fa-github" size="lg" /></span>
+                    </a>
+                </li>
+                <li>
+                    <a :href="mediumlink" target="_blank" v-ripple
+                        class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple">
+                        <span><font-awesome-icon icon="fa-brands fa-medium" size="lg" /></span>
                     </a>
                 </li>
                 <li>
@@ -203,22 +280,56 @@ export default defineComponent({
                         class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-600 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple">
                         <span><font-awesome-icon icon="fa-brands fa-linkedin" size="lg" /></span>
                     </a>
-                </li>
+                </li> -->
 
-                <router-link to="/Contact">
+<!-- Medium st -->
                     <li>
-                        <a v-ripple class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-sm text-600"
-                        v-styleclass="{
+                
+                        <a :href="linkedInlink" target="_blank" v-ripple
+                        class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center no-underline text-sm text-100 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
+                            v-styleclass="{
                                 selector: '.flag',
                                 enterClass: 'hidden',
                                 leaveToClass: 'hidden',
                             }">
-                        
-                            <span><Button label="Contact Me" class="text-sm p-button-secondary" rounded /></span>
+                            <font-awesome-icon icon="fa-brands fa-linkedin" size="lg" /> 
+                                    <span class="lg:px-2">LinkedIn</span>
                         </a>
                     </li>
-                </router-link>
-            </ul>
+<!-- Medium ed -->
+<!-- GitHub st -->
+                    <li>
+                
+                        <a :href="githublink" target="_blank" v-ripple
+                        class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center no-underline text-sm text-100 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
+                            v-styleclass="{
+                                selector: '.flag',
+                                enterClass: 'hidden',
+                                leaveToClass: 'hidden',
+                            }">
+                            <font-awesome-icon icon="fa-brands fa-github" size="lg" /> 
+                                    <span class="lg:px-2">GitHub</span>
+                        </a>
+                    </li>
+<!-- GitHub ed -->
+<!-- Medium st -->
+                    <li>
+                
+                        <a :href="mediumlink" target="_blank" v-ripple
+                        class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center no-underline text-sm text-100 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
+                            v-styleclass="{
+                                selector: '.flag',
+                                enterClass: 'hidden',
+                                leaveToClass: 'hidden',
+                            }">
+                            <font-awesome-icon icon="fa-brands fa-medium" size="lg" /> 
+                                    <span class="lg:px-2">Medium</span>
+                        </a>
+                    </li>
+<!-- Medium ed -->
+
+
+                </ul>
         </div>
     </div>
 </template>
