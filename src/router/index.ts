@@ -10,8 +10,7 @@ import NotFound from "../views/NotFound.vue";
 import NetworkError from "../views/NetworkError.vue";
 import DevSiteView from "../views/DevSiteView.vue";
 import NftAiGeneratorView from "../views/NftAiGeneratorView.vue";
-import PillarsAndRingsView from "/src/views/PillarsAndRingsView.vue";
-import PineLangView from "/src/views/PineLangView.vue"
+import PillarsAndRingsView from "../views/PillarsAndRingsView.vue";
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -65,12 +64,6 @@ const routes: Array<RouteRecordRaw> = [
     path: "/Contact",
     name: "Contact",
     component: ContactView,
-  },
-
-  {
-    path: "/PineLangView",
-    name: "PineLangView",
-    component: PineLangView,
   },
 
   {

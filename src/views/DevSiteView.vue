@@ -145,13 +145,13 @@ export default defineComponent({
 <template>
   <div class="surface-section px-4 py-6 md:px-6 lg:px-8">
     <!-- Grid 1 Header Mod-->
-    <div class="grid mb-6 align-items-center">
+    <div class="grid bg-blue-200 mb-6 align-items-center">
       <!-- c1 -->
       <div class="col lg:w-6">
-        <div class="text-6xl font-bold text-600">
+        <div class="text-6xl font-bold text-white">
           {{ data?.project.data.attributes.title }}
         </div>
-        <div class="line-height-3 text-800 mt-3 sm:text-sm md:text-lg">
+        <div class="line-height-3 text-white mt-3 sm:text-sm md:text-lg">
           {{ data?.project.data.attributes.description }}
         </div>
       </div>
@@ -228,25 +228,24 @@ export default defineComponent({
       <div class="col-12 lg:col-10 lg:px-5">
         <div class="flex flex-wrap align-items-center justify-content-between mb-5 gap-5">
 
-
           <!-- Github Repo -->
-          <div class="col-12 bg-teal-100">
+          <div class="col-12">
             <a :href="githubUrl" target="_blank">
+              <div class="p-3 border-1 surface-border border-round surface-card">
 
-            <div class="p-3 border-round shadow-2 flex align-items-center text-left surface-card">
-                <div style="width:48px;height:48px;border-radius:10px" class="bg-teal-100 inline-flex align-items-center justify-content-center mr-3">
-                    <i class="pi pi-github text-teal-600 text-3xl"></i>
+                <div class="text-900 mb-2">
+                  <i class="pi pi-github mr-2"></i>
+                  <span class="font-medium">Github</span>
                 </div>
-                <div>
-                    <span class="text-900 text-xl font-medium mb-2">Github</span>
-                    <p class="mt-1 mb-0 text-600 font-medium text-sm">{{ data?.project.data.attributes.title }} 
-                    repository
-                  </p>
-                </div>            
-            </div>
+                <div class="text-700">
+                  Checkout the {{ data?.project.data.attributes.title }} project
+                  repository
+                </div>
+
+              </div>
             </a>
           </div>
-          
+
           <!-- #1 Image -->
           <div class="text-center mb-2">
             <img :src="data?.project.data.attributes.image01.data?.attributes.url" alt="Image"
