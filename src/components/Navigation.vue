@@ -105,10 +105,21 @@ export default defineComponent({
         <div
             class="align-items-center flex-grow-1 justify-content-between hidden lg:flex absolute lg:static w-full left-0 top-100 z-1 shadow-2 lg:shadow-none flag">
             
+
+
+
+
             <!-- Project Dropdown menue -->
             <ul
                 class="bg-grey-900 list-none p-0 m-0 flex lg:align-items-center select-none flex-column lg:flex-row surface-900">
+                <li>
                 
+                
+
+                    <!-- <font-awesome-icon icon="fa-brands fa-linkedin" size="lg" />  -->
+                            <span class="no-underline text-sm text-100 lg:px-2"><strong>James Ahn-King</strong> - Full-Stack Developer</span>
+            </li>
+
                 <li class="lg:relative">
                 <a v-ripple class="flex px-6 p-3 lg:px-3 lg:py-2 align-items-center text-0 hover:text-900 hover:surface-100 font-medium border-round cursor-pointer transition-colors transition-duration-150 p-ripple"
                     v-styleclass="{ selector: '@next', enterClass: 'hidden', enterActiveClass: 'scalein', leaveToClass: 'hidden', leaveActiveClass: 'fadeout', hideOnOutsideClick: true }">
@@ -176,6 +187,7 @@ export default defineComponent({
                 </router-link>
                 </ul>
             </li>
+ 
                 <!-- Nav Item 1 -->
                 <!-- <router-link to="/DevSite" class="no-underline">
                     <li>
