@@ -259,8 +259,8 @@ export default defineComponent({
                     </i>
                 </div>
                 <div>
-                    <span class="text-600 text-xs font-bold mb-2">This Project On Medium:</span>
-                    <p class="mt-1 mb-0 text-900 font-bold text-md">Riding On Chains with a Pinecone</p>
+                    <span class="text-800 text-xl font-bold mb-2">This Project On Medium:</span>
+                    <p class="mt-1 mb-0 text-900 font-bold text-sm">Riding On Chains with a Pinecone</p>
                     <p class="mt-1 mb-0 text-900 text-sm">Directory-based bulk data loading with Pinecone and LangChain
                     </p>
                 </div>            
