@@ -347,8 +347,8 @@ export default defineComponent({
               leaveToClass: 'hidden',
             }"
           >
-            <font-awesome-icon icon="fa-brands fa-linkedin" size="lg" />
-            <span class="lg:px-2">LinkedIn</span>
+            <font-awesome-icon icon="fa-brands fa-linkedin" class="pr-2" size="lg" />
+            <span>LinkedIn</span>
           </a>
         </li>
         <!-- Medium ed -->
@@ -365,8 +365,8 @@ export default defineComponent({
               leaveToClass: 'hidden',
             }"
           >
-            <font-awesome-icon icon="fa-brands fa-github" size="lg" />
-            <span class="lg:px-2">GitHub</span>
+            <font-awesome-icon icon="fa-brands fa-github" class="pr-2" size="lg" />
+            <span>GitHub</span>
           </a>
         </li>
         <!-- GitHub ed -->
@@ -383,8 +383,8 @@ export default defineComponent({
               leaveToClass: 'hidden',
             }"
           >
-            <font-awesome-icon icon="fa-brands fa-medium" size="lg" />
-            <span class="lg:px-2">Medium</span>
+            <font-awesome-icon icon="fa-brands fa-medium" class="pr-2" size="lg" />
+            <span>Medium</span>
           </a>
         </li>
         <!-- Medium ed -->
